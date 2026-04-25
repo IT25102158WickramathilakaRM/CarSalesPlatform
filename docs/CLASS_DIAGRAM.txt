@@ -1,0 +1,49 @@
+SE1020 AutoMart - UML Class Diagram
+
+INHERITANCE:
+User (abstract) <|-- BuyerUser
+User (abstract) <|-- SellerUser
+User (abstract) <|-- AdminUser
+Car  (abstract) <|-- SUV
+Car  (abstract) <|-- Sedan
+Car  (abstract) <|-- Hatchback
+Review (abstract) <|-- PublicReview
+Review (abstract) <|-- VerifiedReview
+
+ASSOCIATIONS:
+UserController     --> AuthenticationService
+CarController      --> CarService
+TransactionController --> TransactionService
+AdminController    --> AdminService
+ReviewController   --> ReviewService
+WishlistController --> WishlistService
+
+AuthenticationService --> UserFileHandler --> users.txt
+CarService            --> CarFileHandler  --> cars.txt
+TransactionService    --> InquiryFileHandler  --> inquiries.txt
+TransactionService    --> PurchaseFileHandler --> purchases.txt
+AdminService          --> AdminFileHandler    --> admins.txt, logs.txt
+ReviewService         --> ReviewFileHandler  --> reviews.txt
+WishlistService       --> WishlistFileHandler --> wishlist.txt, recentviews.txt
+
+KEY CLASSES & ATTRIBUTES:
+User: userId, username, email, password, fullName, phoneNumber, registrationDate, isActive
+BuyerUser: preferredCarType, budgetLimit, totalPurchases
+SellerUser: businessName, location, totalListings, rating
+AdminUser: adminLevel(SUPER_ADMIN|MODERATOR|SUPPORT), department, canApproveListings, canDeleteUsers
+
+Car: carId, sellerId, make, model, year, price, mileage, colour, fuelType, transmission, condition, status, isApproved
+SUV: numSeats, hasFourWheelDrive, groundClearance
+Sedan: numDoors, hasSunroof, bootCapacity
+Hatchback: hasFoldableRearSeats, roofType, engineCC
+
+Review: reviewId, carId, reviewerId, rating, title, body, submittedDate, isApproved, isFlagged
+PublicReview: displayName
+VerifiedReview: purchaseId, isVerified
+
+Inquiry: inquiryId, carId, buyerId, sellerId, message, status(PENDING|RESPONDED|CLOSED)
+Purchase: purchaseId, carId, buyerId, agreedPrice, paymentMethod, purchaseStatus
+ActivityLog: logId, adminId, actionType, targetId, timestamp
+Wishlist: wishlistId, userId, carIds: List<String>
+RecentView: recentViewId, userId, carId, viewedDate, viewCount
+# t11
