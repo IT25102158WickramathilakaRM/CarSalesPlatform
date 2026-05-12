@@ -1,0 +1,10 @@
+USR-A1B2C3D4|john_buyer|john@email.com|pass123|John Perera|0771234567|2024-01-10|true|BUYER|Sedan|3500000|2
+USR-B2C3D4E5|sarah_buy|sarah@email.com|pass456|Sarah Fernando|0772345678|2024-01-15|true|BUYER|SUV|8000000|1
+USR-C3D4E5F6|mike_buy|mike@email.com|mike789|Michael Silva|0773456789|2024-02-01|true|BUYER|Hatchback|2000000|0
+USR-D4E5F6G7|priya_b|priya@email.com|priya123|Priya Wickrama|0774567890|2024-02-10|true|BUYER|Any|5000000|1
+USR-E5F6G7H8|kasun_buy|kasun@email.com|kasun456|Kasun Rajapaksa|0775678901|2024-03-01|true|BUYER|Sedan|4000000|0
+USR-F6G7H8I9|amal_sell|amal@cars.lk|sell123|Amal Dias|0776789012|2024-01-05|true|SELLER|Amal Motors|Colombo|5|4.5
+USR-G7H8I9J0|ravi_sell|ravi@motors.lk|ravi456|Ravi Gunawardena|0777890123|2024-01-20|true|SELLER|Ravi Automobiles|Kandy|8|4.2
+USR-H8I9J0K1|nimal_sel|nimal@auto.lk|nimal789|Nimal Bandara|0778901234|2024-02-05|true|SELLER|Nimal Auto Sales|Galle|3|4.7
+USR-I9J0K1L2|chamara_s|chamara@cars.lk|cham123|Chamara Senanayake|0779012345|2024-02-20|true|SELLER|Chamara Vehicles|Negombo|6|4.1
+USR-J0K1L2M3|saman_sel|saman@lk.com|saman456|Saman Jayawardena|0770123456|2024-03-10|true|SELLER|Saman Car World|Matara|4|4.8

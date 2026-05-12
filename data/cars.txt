@@ -1,0 +1,10 @@
+CAR-001A2B3C|USR-F6G7H8I9|Toyota|Corolla|2019|4500000|62000|Pearl White|Petrol|Automatic|Excellent|Well-maintained Corolla. Full service history. No accidents. Single owner.|2024-01-15|Available|true|Sedan|4|false|460L
+CAR-002B3C4D|USR-F6G7H8I9|Honda|Vezel|2020|7800000|35000|Lunar Silver|Hybrid|Automatic|Excellent|Hybrid crossover SUV. Low mileage. Fuel efficient. Colombo registered.|2024-01-18|Available|true|SUV|5|false|150.0
+CAR-003C4D5E|USR-G7H8I9J0|Suzuki|Swift|2018|2800000|78000|Cherry Red|Petrol|Manual|Good|Reliable hatchback. Good city car. Recent service. 2 owners.|2024-01-22|Available|true|Hatchback|true|Standard|1200
+CAR-004D5E6F|USR-G7H8I9J0|Toyota|Land Cruiser Prado|2017|18500000|95000|Graphite|Diesel|Automatic|Excellent|Full spec Prado. Sunroof. Leather seats. 4WD. Fully loaded.|2024-02-01|Available|true|SUV|7|true|220.0
+CAR-005E6F7G|USR-H8I9J0K1|Honda|Civic|2021|6500000|28000|Platinum White|Petrol|Automatic|Excellent|Latest generation Civic. Turbocharged. Like new condition.|2024-02-05|Available|true|Sedan|4|true|519L
+CAR-006F7G8H|USR-H8I9J0K1|Suzuki|Alto|2020|2100000|45000|Blue|Petrol|Manual|Good|Fuel-efficient city car. Perfect for beginners. Low running costs.|2024-02-08|Available|true|Hatchback|false|Standard|800
+CAR-007G8H9I|USR-I9J0K1L2|Nissan|X-Trail|2018|8900000|72000|Cayenne Red|Diesel|Automatic|Good|Spacious family SUV. 7 seats. Panoramic roof. Well serviced.|2024-02-12|Available|true|SUV|7|false|215.0
+CAR-008H9I0J|USR-I9J0K1L2|Toyota|Axio|2016|3200000|98000|White|Petrol|Automatic|Fair|Popular workhorse sedan. Reliable Toyota engine. Minor cosmetic wear.|2024-02-15|Available|true|Sedan|4|false|408L
+CAR-009I0J1K|USR-J0K1L2M3|Hyundai|i10|2019|2500000|55000|Deep Ocean Blue|Petrol|Automatic|Good|Compact hatchback with modern features. Reverse camera. Alloy wheels.|2024-02-20|Available|true|Hatchback|true|Standard|1000
+CAR-010J1K2L|USR-J0K1L2M3|Mitsubishi|Outlander|2019|10500000|65000|Diamond White|Petrol|Automatic|Excellent|PHEV hybrid. Imported directly. All documents clear. Warranty remaining.|2024-03-01|Available|true|SUV|7|false|200.0
