@@ -189,5 +189,3 @@ Each member works on their own branch (see [docs/WORKLOAD_DISTRIBUTION.md](docs/
 
 ---
 
-## License
-Academic project – SE1020, IIT Sri Lanka / University of Westminster.
