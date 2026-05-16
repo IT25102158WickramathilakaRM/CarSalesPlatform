@@ -23,7 +23,7 @@
     <p class="page-subtitle">Fill in all details. Your listing will be reviewed before going live.</p>
   </div>
 
-  <c:if test="${not empty error}"><div class="alert alert-error">⚠️ ${error}</div></c:if>
+  <c:if test="${not empty error}"><div class="alert alert-error">${error}</div></c:if>
 
   <div class="card">
     <div class="card-body">
@@ -53,7 +53,7 @@
         <div class="form-row-3">
           <div class="form-group">
             <label class="form-label">Year *</label>
-            <input name="year" type="number" class="form-control" min="1980" max="2025" placeholder="2020" required>
+            <input name="year" type="number" class="form-control" min="1980" max="2030" placeholder="2020" required>
           </div>
           <div class="form-group">
             <label class="form-label">Price (LKR) *</label>
@@ -104,9 +104,14 @@
           <textarea name="description" class="form-control" rows="4" placeholder="Describe your vehicle in detail..." required style="resize:vertical"></textarea>
         </div>
 
+        <div class="form-group">
+          <label class="form-label">Photo URL <small class="text-muted">(optional)</small></label>
+          <input name="imageUrl" type="text" class="form-control" placeholder="https://...">
+        </div>
+
         <!-- SUV Fields -->
         <div id="suvFields" style="display:none;border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;margin-bottom:1rem">
-          <div style="font-weight:600;margin-bottom:.75rem;color:var(--primary)">🚙 SUV Specific Details</div>
+          <div style="font-weight:600;margin-bottom:.75rem;color:var(--primary)">SUV-specific details</div>
           <div class="form-row-3">
             <div class="form-group"><label class="form-label">Seats</label><input name="numSeats" type="number" class="form-control" value="7" min="5" max="9"></div>
             <div class="form-group"><label class="form-label">4WD</label><select name="hasFourWheelDrive" class="form-control form-select"><option value="false">No</option><option value="true">Yes</option></select></div>
@@ -116,7 +121,7 @@
 
         <!-- Sedan Fields -->
         <div id="sedanFields" style="display:none;border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;margin-bottom:1rem">
-          <div style="font-weight:600;margin-bottom:.75rem;color:var(--primary)">🚘 Sedan Specific Details</div>
+          <div style="font-weight:600;margin-bottom:.75rem;color:var(--primary)">Sedan-specific details</div>
           <div class="form-row-3">
             <div class="form-group"><label class="form-label">Doors</label><input name="numDoors" type="number" class="form-control" value="4" min="2" max="5"></div>
             <div class="form-group"><label class="form-label">Sunroof</label><select name="hasSunroof" class="form-control form-select"><option value="false">No</option><option value="true">Yes</option></select></div>
@@ -126,7 +131,7 @@
 
         <!-- Hatchback Fields -->
         <div id="hatchbackFields" style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;margin-bottom:1rem">
-          <div style="font-weight:600;margin-bottom:.75rem;color:var(--primary)">🚗 Hatchback Specific Details</div>
+          <div style="font-weight:600;margin-bottom:.75rem;color:var(--primary)">Hatchback-specific details</div>
           <div class="form-row-3">
             <div class="form-group"><label class="form-label">Foldable Rear Seats</label><select name="hasFoldableRearSeats" class="form-control form-select"><option value="true">Yes</option><option value="false">No</option></select></div>
             <div class="form-group"><label class="form-label">Roof Type</label><select name="roofType" class="form-control form-select"><option value="Standard">Standard</option><option value="Convertible">Convertible</option></select></div>

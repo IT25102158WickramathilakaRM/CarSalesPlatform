@@ -87,6 +87,7 @@ public class UserController {
         User user = (User) session.getAttribute("loggedUser");
         if (user == null) return "redirect:/login";
         model.addAttribute("user", user);
+        model.addAttribute("loggedUser", user);
         return "profile";
     }
 

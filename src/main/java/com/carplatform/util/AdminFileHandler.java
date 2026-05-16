@@ -81,18 +81,20 @@ public class AdminFileHandler {
     private AdminUser parseAdminLine(String line) {
         try {
             String[] p = line.split("\\|", -1);
-            if (p.length < 16) return null;
+            if (p.length < 15) return null;
             AdminUser a = new AdminUser();
             a.setUserId(p[0]); a.setUsername(p[1]); a.setEmail(p[2]); a.setPassword(p[3]);
             a.setFullName(p[4]); a.setPhoneNumber(p[5]); a.setRegistrationDate(p[6]);
             a.setActive(Boolean.parseBoolean(p[7]));
-            // p[8] = role (ADMIN), p[9] through p[15] = admin-specific
+            // p[8] = ADMIN; p[9]–p[14] = level, dept, permissions, lastLogin
             a.setAdminLevel(AdminUser.AdminLevel.valueOf(p[9]));
             a.setDepartment(p[10]);
             a.setCanApproveListings(Boolean.parseBoolean(p[11]));
             a.setCanDeleteUsers(Boolean.parseBoolean(p[12]));
             a.setCanViewLogs(Boolean.parseBoolean(p[13]));
-            if (p.length >= 15) a.setLastLoginDate("N/A".equals(p[14]) ? null : p[14]);
+            if (p.length > 14 && p[14] != null && !p[14].isBlank()) {
+                a.setLastLoginDate("N/A".equals(p[14]) ? null : p[14]);
+            }
             return a;
         } catch (Exception e) { System.err.println("[AdminFileHandler] Parse error: " + e.getMessage()); return null; }
     }

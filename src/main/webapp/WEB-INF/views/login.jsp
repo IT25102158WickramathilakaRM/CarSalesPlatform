@@ -16,10 +16,10 @@
     <h2 style="text-align:center;font-size:1.3rem;margin-bottom:1.5rem;color:var(--text-secondary)">Sign in to your account</h2>
 
     <c:if test="${not empty success}">
-      <div class="alert alert-success">✅ ${success}</div>
+      <div class="alert alert-success">${success}</div>
     </c:if>
     <c:if test="${not empty error}">
-      <div class="alert alert-error">⚠️ ${error}</div>
+      <div class="alert alert-error">${error}</div>
     </c:if>
 
     <form action="${pageContext.request.contextPath}/login" method="post">

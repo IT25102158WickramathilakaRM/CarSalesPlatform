@@ -28,12 +28,15 @@ public abstract class Car {
     private String status;          // Available, Sold, Pending
     private String listedDate;
     private boolean isApproved;
+    /** HTTPS URL or app-relative path (e.g. /uploads/cars/...) for listing photo */
+    private String imageUrl;
 
     // ─── Constructors ──────────────────────────────────────────────────────
 
     public Car() {
         this.status     = "Available";
         this.isApproved = false;
+        this.imageUrl   = "";
     }
 
     public Car(String carId, String sellerId, String make, String model,
@@ -129,6 +132,20 @@ public abstract class Car {
 
     public boolean isApproved()                      { return isApproved; }
     public void    setApproved(boolean approved)     { this.isApproved = approved; }
+
+    public String getImageUrl()                      { return imageUrl; }
+    public void   setImageUrl(String imageUrl)       { this.imageUrl = imageUrl == null ? "" : imageUrl.trim(); }
+
+    /** True when a non-blank image URL is set (safe for JSP checks). */
+    public boolean hasImage() {
+        return imageUrl != null && !imageUrl.isBlank();
+    }
+
+    /** Appended to subclass lines as |url (may be empty). */
+    protected String tailImageUrl() {
+        String u = imageUrl;
+        return "|" + (u == null || u.isBlank() ? "" : u);
+    }
 
     @Override
     public String toString() {

@@ -24,7 +24,7 @@
           <label class="form-label">Rating *</label>
           <div style="display:flex;gap:.5rem;font-size:2rem" id="starRating">
             <c:forEach begin="1" end="5" var="i">
-              <span class="star" data-val="${i}" style="cursor:pointer;color:${i <= review.rating ? '#f59e0b' : '#d1d5db'}" onclick="setRating(${i})">★</span>
+              <span class="star" data-val="${i}" style="cursor:pointer;color:${i <= review.rating ? '#f59e0b' : '#d1d5db'}" onclick="setRating(${i})">*</span>
             </c:forEach>
           </div>
           <input type="hidden" name="rating" id="ratingInput" value="${review.rating}">

@@ -62,7 +62,8 @@ public class Sedan extends Car {
 
     @Override
     public String toFileString() {
-        return super.toFileString() + "|" + numDoors + "|" + hasSunroof + "|" + bootCapacity;
+        return super.toFileString() + "|" + numDoors + "|" + hasSunroof + "|"
+                + bootCapacity + tailImageUrl();
     }
 
     // ─── Getters & Setters ────────────────────────────────────────────────

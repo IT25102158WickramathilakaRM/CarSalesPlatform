@@ -8,13 +8,13 @@
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 **AutoMart** is a web-based second-hand car sales and purchase platform built using Java, Spring Boot, JSP Servlets, and file-based data storage. This project was developed as part of the SE1020 Object-Oriented Programming module.
 
 ---
 
-## 👥 Group Members & Modules
+## Group Members & Modules
 
 | Member | Module | Key Classes |
 |--------|--------|------------|
@@ -27,25 +27,28 @@
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Prerequisites
-- Java 17
-- Maven 3.9+
-- IntelliJ IDEA (recommended)
+- Java 17 or newer (21+ recommended)
+- IntelliJ IDEA (recommended) **or** use the included Maven Wrapper (no global Maven install needed)
 
-### Steps
-```bash
-# Clone the repository
-git clone https://github.com/your-group/automart.git
-cd automart/CarSalesPlatform
+### Steps (Windows)
+```powershell
+cd CarSalesPlatform
 
-# Set Java 17
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
-
-# Build and run
-mvn spring-boot:run
+# Start the server (keep the window open)
+.\run.bat
+# Or: .\mvnw.cmd spring-boot:run
 ```
+
+### Steps (Mac/Linux)
+```bash
+cd CarSalesPlatform
+./mvnw spring-boot:run
+```
+
+Then open **http://localhost:8080/cars** in your browser (not `https://localhost` and not port 80).
 
 ### Access
 - **User Site:** http://localhost:8080/cars
@@ -64,7 +67,7 @@ mvn spring-boot:run
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 CarSalesPlatform/
@@ -132,7 +135,7 @@ CarSalesPlatform/
 
 ---
 
-## 🎯 OOP Concepts Demonstrated
+## OOP Concepts Demonstrated
 
 | Concept | Where Applied |
 |---------|--------------|
@@ -144,7 +147,7 @@ CarSalesPlatform/
 
 ---
 
-## 📁 Data Files (Text File Storage)
+## Data Files (Text File Storage)
 
 | File | Description | Format |
 |------|-------------|--------|
@@ -160,7 +163,7 @@ CarSalesPlatform/
 
 ---
 
-## 🔗 GitHub Contribution Strategy
+## GitHub Contribution Strategy
 
 Each member works on their own branch:
 - `feature/user-management` – Member 1
@@ -172,5 +175,5 @@ Each member works on their own branch:
 
 ---
 
-## 📄 License
+## License
 Academic project – SE1020, IIT Sri Lanka / University of Westminster.

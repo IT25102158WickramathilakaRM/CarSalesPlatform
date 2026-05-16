@@ -21,11 +21,11 @@
     <h1 class="page-title">Send an Inquiry</h1>
     <p class="page-subtitle">Contact the seller about: <strong>${car.year} ${car.make} ${car.model}</strong></p>
   </div>
-  <c:if test="${not empty error}"><div class="alert alert-error">⚠️ ${error}</div></c:if>
+  <c:if test="${not empty error}"><div class="alert alert-error">${error}</div></c:if>
 
   <div class="card mb-3" style="background:var(--surface-2)">
     <div class="card-body flex gap-2 items-center">
-      <div style="font-size:2.5rem">🚗</div>
+      <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);width:4rem;text-align:center">Listing</div>
       <div>
         <div class="font-bold">${car.year} ${car.make} ${car.model}</div>
         <div class="text-secondary text-sm">LKR <fmt:formatNumber value="${car.price}" pattern="#,###"/> · ${car.bodyType} · ${car.condition}</div>

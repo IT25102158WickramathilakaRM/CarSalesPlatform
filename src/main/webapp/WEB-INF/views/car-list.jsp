@@ -19,9 +19,9 @@
     <a href="${pageContext.request.contextPath}/cars" class="nav-link active">Browse</a>
     <c:if test="${not empty loggedUser}">
       <a href="${pageContext.request.contextPath}/cars/my-listings" class="nav-link">My Listings</a>
-      <a href="${pageContext.request.contextPath}/wishlist" class="nav-link">❤️ Wishlist</a>
+      <a href="${pageContext.request.contextPath}/wishlist" class="nav-link">Wishlist</a>
       <a href="${pageContext.request.contextPath}/cars/add" class="nav-link nav-btn">+ List Car</a>
-      <a href="${pageContext.request.contextPath}/profile" class="nav-link">👤 ${loggedUser.username}</a>
+      <a href="${pageContext.request.contextPath}/profile" class="nav-link">${loggedUser.username}</a>
       <a href="${pageContext.request.contextPath}/logout" class="nav-link">Logout</a>
     </c:if>
     <c:if test="${empty loggedUser}">
@@ -44,8 +44,8 @@
 </div>
 
 <div class="page-wrapper">
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
-  <c:if test="${not empty error}"><div class="alert alert-error">⚠️ ${error}</div></c:if>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
+  <c:if test="${not empty error}"><div class="alert alert-error">${error}</div></c:if>
 
   <!-- FILTER PANEL -->
   <div class="filter-panel">
@@ -103,7 +103,6 @@
   <c:choose>
     <c:when test="${empty cars}">
       <div class="card text-center" style="padding:3rem">
-        <div style="font-size:3rem;margin-bottom:1rem">🚗</div>
         <h3>No cars found</h3>
         <p class="text-secondary mt-1">Try adjusting your search filters.</p>
       </div>
@@ -112,7 +111,14 @@
       <div class="car-grid">
         <c:forEach var="car" items="${cars}">
           <div class="car-card">
-            <div class="car-card-img">🚗</div>
+            <c:choose>
+              <c:when test="${not empty car.imageUrl}">
+                <div class="car-card-img"><img src="${car.imageUrl}" alt="${car.year} ${car.make} ${car.model}" loading="lazy"></div>
+              </c:when>
+              <c:otherwise>
+                <div class="car-card-img">No photo</div>
+              </c:otherwise>
+            </c:choose>
             <div class="car-card-body">
               <div class="flex justify-between items-center mb-1">
                 <span class="car-badge badge-${car.bodyType.toLowerCase()}">${car.bodyType}</span>
@@ -121,19 +127,19 @@
               <div class="car-make-model">${car.year} ${car.make} ${car.model}</div>
               <div class="car-price" style="margin-top:.4rem">LKR <fmt:formatNumber value="${car.price}" pattern="#,###"/></div>
               <div class="car-meta">
-                <span class="car-meta-item">⚡ ${car.fuelType}</span>
-                <span class="car-meta-item">⚙️ ${car.transmission}</span>
-                <span class="car-meta-item">🎨 ${car.colour}</span>
+                <span class="car-meta-item">${car.fuelType}</span>
+                <span class="car-meta-item">${car.transmission}</span>
+                <span class="car-meta-item">${car.colour}</span>
               </div>
               <div class="car-meta" style="margin-top:.4rem">
-                <span class="car-meta-item">📍 <fmt:formatNumber value="${car.mileage}" pattern="#,###"/> km</span>
-                <span class="car-meta-item">🔖 ${car.condition}</span>
+                <span class="car-meta-item"><fmt:formatNumber value="${car.mileage}" pattern="#,###"/> km</span>
+                <span class="car-meta-item">${car.condition}</span>
               </div>
               <div class="flex gap-1" style="margin-top:1rem">
                 <a href="${pageContext.request.contextPath}/cars/${car.carId}" class="btn btn-primary btn-sm" style="flex:1">View Details</a>
                 <c:if test="${not empty loggedUser}">
                   <form action="${pageContext.request.contextPath}/wishlist/add/${car.carId}" method="post" style="margin:0">
-                    <button type="submit" class="wishlist-btn" title="Add to Wishlist">❤️</button>
+                    <button type="submit" class="wishlist-btn" title="Add to wishlist">+</button>
                   </form>
                 </c:if>
               </div>

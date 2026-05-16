@@ -36,7 +36,7 @@ public class WishlistController {
         List<Car> cars = new ArrayList<>();
         for (String carId : wishlist.getCarIds()) {
             Car car = carService.getCarById(carId);
-            if (car != null) cars.add(car);
+            if (carService.isPublicBrowseListing(car)) cars.add(car);
         }
         model.addAttribute("wishlistCars", cars);
         model.addAttribute("wishlist",     wishlist);
@@ -48,6 +48,11 @@ public class WishlistController {
     public String addToWishlist(@PathVariable String carId, HttpSession session, RedirectAttributes ra) {
         User user = (User) session.getAttribute("loggedUser");
         if (user == null) return "redirect:/login";
+        Car car = carService.getCarById(carId);
+        if (!carService.isPublicBrowseListing(car)) {
+            ra.addFlashAttribute("error", "Only approved listings can be added to your wishlist.");
+            return "redirect:/cars";
+        }
         boolean ok = wishlistService.addToWishlist(user.getUserId(), carId);
         ra.addFlashAttribute(ok ? "success" : "error", ok ? "Added to wishlist." : "Already in wishlist.");
         return "redirect:/cars/" + carId;
@@ -80,7 +85,7 @@ public class WishlistController {
         List<Car> recentCars = new ArrayList<>();
         for (RecentView rv : recentViews) {
             Car car = carService.getCarById(rv.getCarId());
-            if (car != null) recentCars.add(car);
+            if (carService.isPublicBrowseListing(car)) recentCars.add(car);
         }
         model.addAttribute("recentCars",  recentCars);
         model.addAttribute("recentViews", recentViews);

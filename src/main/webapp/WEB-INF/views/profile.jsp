@@ -12,8 +12,11 @@
   <a href="${pageContext.request.contextPath}/cars" class="navbar-brand">Auto<span>Mart</span></a>
   <div class="navbar-nav">
     <a href="${pageContext.request.contextPath}/cars" class="nav-link">Browse</a>
-    <a href="${pageContext.request.contextPath}/wishlist" class="nav-link">❤️ Wishlist</a>
-    <a href="${pageContext.request.contextPath}/purchase/history" class="nav-link">🛒 Purchases</a>
+    <a href="${pageContext.request.contextPath}/cars/my-listings" class="nav-link">My Listings</a>
+    <a href="${pageContext.request.contextPath}/wishlist" class="nav-link">Wishlist</a>
+    <a href="${pageContext.request.contextPath}/purchase/history" class="nav-link">Purchases</a>
+    <a href="${pageContext.request.contextPath}/cars/add" class="nav-link nav-btn">+ List Car</a>
+    <a href="${pageContext.request.contextPath}/profile" class="nav-link active">${loggedUser.username}</a>
     <a href="${pageContext.request.contextPath}/logout" class="nav-link">Logout</a>
   </div>
 </nav>
@@ -23,8 +26,8 @@
     <h1 class="page-title">My Profile</h1>
     <p class="page-subtitle">Manage your account details</p>
   </div>
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
-  <c:if test="${not empty error}"><div class="alert alert-error">⚠️ ${error}</div></c:if>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
+  <c:if test="${not empty error}"><div class="alert alert-error">${error}</div></c:if>
 
   <!-- Profile Info Card -->
   <div class="card mb-3">
@@ -32,7 +35,7 @@
     <div class="card-body">
       <div style="display:grid;grid-template-columns:80px 1fr;gap:1.5rem;align-items:center;margin-bottom:1.5rem">
         <div style="width:80px;height:80px;border-radius:50%;background:var(--primary);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff">
-          ${user.fullName.charAt(0).toUpperCase()}
+          ${user.initial}
         </div>
         <div>
           <div style="font-size:1.3rem;font-weight:700">${user.fullName}</div>
@@ -70,7 +73,7 @@
 
   <!-- Danger Zone -->
   <div class="card" style="border:1.5px solid #fca5a5">
-    <div class="card-header" style="color:var(--danger);font-weight:700">⚠️ Danger Zone</div>
+    <div class="card-header" style="color:var(--danger);font-weight:700">Danger zone</div>
     <div class="card-body">
       <p class="text-secondary mb-2">Permanently delete your account. This action cannot be undone.</p>
       <form action="${pageContext.request.contextPath}/profile/delete" method="post"

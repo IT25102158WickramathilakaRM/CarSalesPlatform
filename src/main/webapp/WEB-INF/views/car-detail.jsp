@@ -14,8 +14,8 @@
   <div class="navbar-nav">
     <a href="${pageContext.request.contextPath}/cars" class="nav-link">Browse</a>
     <c:if test="${not empty loggedUser}">
-      <a href="${pageContext.request.contextPath}/wishlist" class="nav-link">❤️ Wishlist</a>
-      <a href="${pageContext.request.contextPath}/profile" class="nav-link">👤 ${loggedUser.username}</a>
+      <a href="${pageContext.request.contextPath}/wishlist" class="nav-link">Wishlist</a>
+      <a href="${pageContext.request.contextPath}/profile" class="nav-link">${loggedUser.username}</a>
       <a href="${pageContext.request.contextPath}/logout" class="nav-link">Logout</a>
     </c:if>
     <c:if test="${empty loggedUser}">
@@ -25,17 +25,22 @@
 </nav>
 
 <div class="page-wrapper">
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
-  <c:if test="${not empty error}"><div class="alert alert-error">⚠️ ${error}</div></c:if>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
+  <c:if test="${not empty error}"><div class="alert alert-error">${error}</div></c:if>
 
   <a href="${pageContext.request.contextPath}/cars" class="btn btn-secondary btn-sm mb-2">← Back to Listings</a>
 
   <div style="display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:start">
     <!-- LEFT: Car Info -->
     <div>
-      <div style="background:linear-gradient(135deg,#1e293b,#334155);border-radius:var(--radius);height:350px;display:flex;align-items:center;justify-content:center;font-size:6rem;margin-bottom:1.5rem">
-        🚗
-      </div>
+      <c:choose>
+        <c:when test="${not empty car.imageUrl}">
+          <div class="car-detail-photo"><img src="${car.imageUrl}" alt="${car.year} ${car.make} ${car.model}" loading="lazy"></div>
+        </c:when>
+        <c:otherwise>
+          <div class="car-detail-photo">No photo</div>
+        </c:otherwise>
+      </c:choose>
 
       <div class="card">
         <div class="card-body">
@@ -77,11 +82,11 @@
       <!-- Reviews Section -->
       <div class="card mt-3">
         <div class="card-header flex justify-between items-center">
-          <span>⭐ Reviews &amp; Ratings</span>
+          <span>Reviews and ratings</span>
           <span class="text-secondary text-sm">${reviews.size()} reviews · Avg: <fmt:formatNumber value="${avgRating}" maxFractionDigits="1"/> / 5</span>
         </div>
         <div class="card-body">
-          <c:if test="${not empty loggedUser}">
+          <c:if test="${not empty loggedUser and publicListing}">
             <a href="${pageContext.request.contextPath}/reviews/submit/${car.carId}" class="btn btn-outline btn-sm mb-2">Write a Review</a>
           </c:if>
           <c:choose>
@@ -92,7 +97,7 @@
               <c:forEach var="review" items="${reviews}">
                 <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;margin-bottom:.75rem">
                   <div class="flex justify-between">
-                    <div class="stars">${"⭐".repeat(review.rating)}</div>
+                    <div class="stars">${"*".repeat(review.rating)}</div>
                     <span class="text-muted text-sm">${review.submittedDate}</span>
                   </div>
                   <div class="font-bold" style="margin-top:.25rem">${review.title}</div>
@@ -115,15 +120,21 @@
               <p class="text-secondary text-center mb-2">Sign in to buy, inquire or save</p>
               <a href="${pageContext.request.contextPath}/login" class="btn btn-primary btn-block">Sign In to Continue</a>
             </c:when>
-            <c:when test="${car.status == 'Available'}">
-              <a href="${pageContext.request.contextPath}/purchase/${car.carId}" class="btn btn-success btn-block btn-lg mb-2">🛒 Buy Now</a>
-              <a href="${pageContext.request.contextPath}/inquiry/${car.carId}" class="btn btn-outline btn-block mb-2">💬 Send Inquiry</a>
+            <c:when test="${publicListing && car.status == 'Available'}">
+              <a href="${pageContext.request.contextPath}/purchase/${car.carId}" class="btn btn-success btn-block btn-lg mb-2">Buy now</a>
+              <a href="${pageContext.request.contextPath}/inquiry/${car.carId}" class="btn btn-outline btn-block mb-2">Send inquiry</a>
               <form action="${pageContext.request.contextPath}/wishlist/${inWishlist ? 'remove' : 'add'}/${car.carId}" method="post">
-                <button type="submit" class="btn btn-secondary btn-block">${inWishlist ? '💔 Remove from Wishlist' : '❤️ Add to Wishlist'}</button>
+                <button type="submit" class="btn btn-secondary btn-block">${inWishlist ? 'Remove from wishlist' : 'Add to wishlist'}</button>
               </form>
             </c:when>
-            <c:otherwise>
+            <c:when test="${publicListing}">
               <div class="alert alert-warning">This vehicle is no longer available.</div>
+            </c:when>
+            <c:when test="${car.status == 'Rejected'}">
+              <div class="alert alert-warning">This listing was not approved and is not shown on Browse.</div>
+            </c:when>
+            <c:otherwise>
+              <div class="alert alert-warning">This listing is waiting for admin approval and is not visible to buyers yet.</div>
             </c:otherwise>
           </c:choose>
         </div>

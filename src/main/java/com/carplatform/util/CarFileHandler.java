@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  *
  * File format (cars.txt):
  * carId|sellerId|make|model|year|price|mileage|colour|fuelType|transmission|
- * condition|description|listedDate|status|isApproved|bodyType|[type-specific fields]
+ * condition|description|listedDate|status|isApproved|bodyType|[type-specific fields]|imageUrl
  *
  * Member 2 – Car Listing Management Module
  */
@@ -181,6 +181,9 @@ public class CarFileHandler {
             car.setCondition(p[10]); car.setDescription(p[11]);
             car.setListedDate(p[12]); car.setStatus(p[13]);
             car.setApproved(Boolean.parseBoolean(p[14]));
+            if (p.length > 19) {
+                car.setImageUrl(p[19]);
+            }
             return car;
         } catch (Exception e) {
             System.err.println("[CarFileHandler] Parse error: " + e.getMessage());

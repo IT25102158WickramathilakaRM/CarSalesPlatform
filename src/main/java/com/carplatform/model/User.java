@@ -79,6 +79,17 @@ public abstract class User {
     public boolean isActive()                          { return isActive; }
     public void    setActive(boolean active)           { this.isActive = active; }
 
+    /** First letter for avatar display; safe when fullName is blank (JSP-friendly). */
+    public String getInitial() {
+        if (fullName != null && !fullName.isBlank()) {
+            return fullName.substring(0, 1).toUpperCase();
+        }
+        if (username != null && !username.isBlank()) {
+            return username.substring(0, 1).toUpperCase();
+        }
+        return "?";
+    }
+
     // ─── File Serialisation ───────────────────────────────────────────────
 
     /**

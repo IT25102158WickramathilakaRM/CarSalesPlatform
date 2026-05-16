@@ -18,11 +18,10 @@
 </nav>
 <div class="page-wrapper">
   <div class="page-header"><h1 class="page-title">My Reviews</h1><p class="page-subtitle">Manage reviews you have written</p></div>
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
   <c:choose>
     <c:when test="${empty reviews}">
       <div class="card text-center" style="padding:3rem">
-        <div style="font-size:3rem">⭐</div>
         <h3 class="mt-2">No reviews yet</h3>
         <p class="text-secondary mt-1">Purchase and review a car to share your experience.</p>
       </div>
@@ -34,7 +33,7 @@
             <div class="card-body">
               <div class="flex justify-between items-center">
                 <div>
-                  <div class="stars">${"⭐".repeat(rev.rating)}</div>
+                  <div class="stars">${"*".repeat(rev.rating)}</div>
                   <div class="font-bold mt-1">${rev.title}</div>
                   <div class="text-secondary text-sm">Car: ${rev.carId} · ${rev.submittedDate} · ${rev.reviewType}</div>
                 </div>

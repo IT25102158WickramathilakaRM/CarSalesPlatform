@@ -3,6 +3,7 @@ package com.carplatform.servlet;
 import com.carplatform.model.*;
 import com.carplatform.service.*;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,11 +22,14 @@ public class CarController {
     private final CarService carService;
     private final WishlistService wishlistService;
     private final ReviewService reviewService;
+    private final boolean requireAdminApprovalForListings;
 
-    public CarController(CarService carService, WishlistService wishlistService, ReviewService reviewService) {
-        this.carService       = carService;
-        this.wishlistService  = wishlistService;
-        this.reviewService    = reviewService;
+    public CarController(CarService carService, WishlistService wishlistService, ReviewService reviewService,
+                         @Value("${app.listings.require-admin-approval:false}") boolean requireAdminApprovalForListings) {
+        this.carService = carService;
+        this.wishlistService = wishlistService;
+        this.reviewService = reviewService;
+        this.requireAdminApprovalForListings = requireAdminApprovalForListings;
     }
 
     // ── LIST ─────────────────────────────────────────────────────────────
@@ -68,8 +72,13 @@ public class CarController {
         Car car = carService.getCarById(carId);
         if (car == null) return "redirect:/cars";
         User user = (User) session.getAttribute("loggedUser");
-        if (user != null) wishlistService.recordView(user.getUserId(), carId);
+        String role = (String) session.getAttribute("userRole");
+        if (!carService.mayViewCarDetail(car, user, role)) return "redirect:/cars";
+        if (user != null && carService.isPublicBrowseListing(car)) {
+            wishlistService.recordView(user.getUserId(), carId);
+        }
         model.addAttribute("car",         car);
+        model.addAttribute("publicListing", carService.isPublicBrowseListing(car));
         model.addAttribute("reviews",     reviewService.getReviewsForCar(carId));
         model.addAttribute("avgRating",   reviewService.getAverageRating(carId));
         model.addAttribute("inWishlist",  user != null && wishlistService.isInWishlist(user.getUserId(), carId));
@@ -101,6 +110,7 @@ public class CarController {
                          @RequestParam(defaultValue = "true") boolean hasFoldableRearSeats,
                          @RequestParam(defaultValue = "Standard") String roofType,
                          @RequestParam(defaultValue = "1200") int engineCC,
+                         @RequestParam(defaultValue = "") String imageUrl,
                          HttpSession session, RedirectAttributes ra) {
         User user = (User) session.getAttribute("loggedUser");
         if (user == null) return "redirect:/login";
@@ -118,9 +128,13 @@ public class CarController {
                     hasFoldableRearSeats, roofType, engineCC);
         }
 
+        car.setImageUrl(imageUrl);
+
         String result = carService.addCarListing(car);
         if (result.startsWith("CAR-")) {
-            ra.addFlashAttribute("success", "Listing submitted for admin approval.");
+            ra.addFlashAttribute("success", requireAdminApprovalForListings
+                    ? "Listing submitted for admin approval."
+                    : "Your listing is now visible on Browse.");
             return "redirect:/cars/my-listings";
         }
         ra.addFlashAttribute("error", "Failed to add listing: " + result);
@@ -157,6 +171,7 @@ public class CarController {
                               @RequestParam String description,
                               @RequestParam String condition,
                               @RequestParam String status,
+                              @RequestParam(defaultValue = "") String imageUrl,
                               HttpSession session, RedirectAttributes ra) {
         User user = (User) session.getAttribute("loggedUser");
         if (user == null) return "redirect:/login";
@@ -164,6 +179,7 @@ public class CarController {
         if (car == null || !car.getSellerId().equals(user.getUserId())) return "redirect:/cars/my-listings";
         car.setPrice(price); car.setDescription(description);
         car.setCondition(condition); car.setStatus(status);
+        car.setImageUrl(imageUrl);
         carService.updateListing(car);
         ra.addFlashAttribute("success", "Listing updated successfully.");
         return "redirect:/cars/my-listings";

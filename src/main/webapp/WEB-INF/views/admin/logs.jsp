@@ -16,7 +16,7 @@
   </div>
 </nav>
 <div class="page-wrapper">
-  <div class="page-header"><h1 class="page-title">📋 Activity Logs</h1><p class="page-subtitle">System-wide admin activity audit trail</p></div>
+  <div class="page-header"><h1 class="page-title">Activity Logs</h1><p class="page-subtitle">System-wide admin activity audit trail</p></div>
   <div class="table-wrapper">
     <table>
       <thead><tr><th>Log ID</th><th>Admin</th><th>Action</th><th>Target</th><th>Description</th><th>Timestamp</th></tr></thead>

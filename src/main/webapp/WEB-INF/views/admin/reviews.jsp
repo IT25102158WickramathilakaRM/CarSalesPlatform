@@ -16,8 +16,8 @@
   </div>
 </nav>
 <div class="page-wrapper">
-  <div class="page-header"><h1 class="page-title">⭐ Review Moderation</h1><p class="page-subtitle">Approve, flag, or remove user reviews</p></div>
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
+  <div class="page-header"><h1 class="page-title">Review Moderation</h1><p class="page-subtitle">Approve, flag, or remove user reviews</p></div>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
 
   <h2 style="font-size:1rem;font-weight:700;margin-bottom:.75rem">Pending Reviews (${pendingReviews.size()})</h2>
   <div style="display:grid;gap:1rem;margin-bottom:2rem">
@@ -26,7 +26,7 @@
         <div class="card-body">
           <div class="flex justify-between items-center">
             <div>
-              <div class="stars">${"⭐".repeat(rev.rating)}</div>
+              <div class="stars">${"*".repeat(rev.rating)}</div>
               <div class="font-bold">${rev.title}</div>
               <div class="text-sm text-muted">Car: ${rev.carId} · By: ${rev.reviewerId} · ${rev.submittedDate} · ${rev.reviewType}</div>
             </div>
@@ -34,13 +34,13 @@
           <p class="text-secondary mt-1" style="font-size:.9rem">${rev.body}</p>
           <div class="flex gap-1 mt-2">
             <form action="${pageContext.request.contextPath}/reviews/admin/approve/${rev.reviewId}" method="post">
-              <button type="submit" class="btn btn-success btn-sm">✅ Approve</button>
+              <button type="submit" class="btn btn-success btn-sm">Approve</button>
             </form>
             <form action="${pageContext.request.contextPath}/reviews/admin/flag/${rev.reviewId}" method="post">
-              <button type="submit" class="btn btn-warning btn-sm">🚩 Flag</button>
+              <button type="submit" class="btn btn-warning btn-sm">Flag</button>
             </form>
             <form action="${pageContext.request.contextPath}/reviews/admin/delete/${rev.reviewId}" method="post" onsubmit="return confirm('Delete review?')">
-              <button type="submit" class="btn btn-danger btn-sm">🗑️ Delete</button>
+              <button type="submit" class="btn btn-danger btn-sm">Delete</button>
             </form>
           </div>
         </div>
@@ -59,7 +59,7 @@
         <c:forEach var="rev" items="${allReviews}">
           <tr>
             <td class="text-sm text-muted">${rev.reviewId}</td>
-            <td class="stars" style="font-size:.9rem">${"⭐".repeat(rev.rating)}</td>
+            <td class="stars" style="font-size:.9rem">${"*".repeat(rev.rating)}</td>
             <td>${rev.title}</td>
             <td class="text-sm">${rev.carId}</td>
             <td class="text-sm">${rev.reviewType}</td>

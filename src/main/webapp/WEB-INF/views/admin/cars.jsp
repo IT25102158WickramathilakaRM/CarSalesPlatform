@@ -17,11 +17,11 @@
   </div>
 </nav>
 <div class="page-wrapper">
-  <div class="page-header"><h1 class="page-title">🚗 Car Moderation</h1><p class="page-subtitle">Approve or reject car listings before they go live</p></div>
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
-  <c:if test="${not empty error}"><div class="alert alert-error">⚠️ ${error}</div></c:if>
+  <div class="page-header"><h1 class="page-title">Car Moderation</h1><p class="page-subtitle">Approve or reject car listings before they go live</p></div>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
+  <c:if test="${not empty error}"><div class="alert alert-error">${error}</div></c:if>
 
-  <h2 style="font-size:1rem;font-weight:700;margin-bottom:.75rem">⏳ Pending Approval (${pendingCars.size()})</h2>
+  <h2 style="font-size:1rem;font-weight:700;margin-bottom:.75rem">Pending approval (${pendingCars.size()})</h2>
   <div class="table-wrapper mb-3">
     <table>
       <thead><tr><th>Car ID</th><th>Vehicle</th><th>Price</th><th>Seller</th><th>Type</th><th>Listed</th><th>Actions</th></tr></thead>
@@ -37,10 +37,10 @@
             <td>
               <div class="flex gap-1">
                 <form action="${pageContext.request.contextPath}/admin/cars/approve/${car.carId}" method="post">
-                  <button type="submit" class="btn btn-success btn-sm">✅ Approve</button>
+                  <button type="submit" class="btn btn-success btn-sm">Approve</button>
                 </form>
                 <form action="${pageContext.request.contextPath}/admin/cars/reject/${car.carId}" method="post">
-                  <button type="submit" class="btn btn-danger btn-sm">❌ Reject</button>
+                  <button type="submit" class="btn btn-danger btn-sm">Reject</button>
                 </form>
               </div>
             </td>
@@ -64,7 +64,7 @@
             <td>${car.year} ${car.make} ${car.model}</td>
             <td>LKR <fmt:formatNumber value="${car.price}" pattern="#,###"/></td>
             <td><span class="car-badge badge-${car.status.toLowerCase()}">${car.status}</span></td>
-            <td>${car.approved ? '✅' : '❌'}</td>
+            <td>${car.approved ? 'Yes' : 'No'}</td>
             <td>
               <form action="${pageContext.request.contextPath}/admin/cars/delete/${car.carId}" method="post" onsubmit="return confirm('Delete this listing?')">
                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>

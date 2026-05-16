@@ -98,10 +98,14 @@ img { max-width: 100%; display: block; }
   overflow: hidden; transition: all .25s; }
 .car-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
 .car-card-img {
-  width: 100%; height: 200px; object-fit: cover;
-  background: linear-gradient(135deg, #1e293b, #334155);
+  width: 100%; height: 200px; overflow: hidden;
+  background: #334155;
   display: flex; align-items: center; justify-content: center;
-  font-size: 3.5rem; color: #64748b;
+  font-size: 0.875rem; font-weight: 600; color: #94a3b8;
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.car-card-img img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
 }
 .car-card-body { padding: 1.25rem; }
 .car-make-model { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
@@ -110,6 +114,16 @@ img { max-width: 100%; display: block; }
 .car-meta { display: flex; gap: 1rem; margin-top: .75rem; flex-wrap: wrap; }
 .car-meta-item { display: flex; align-items: center; gap: .3rem;
   font-size: .8rem; color: var(--text-secondary); }
+.car-detail-photo {
+  background: #334155; border-radius: var(--radius); height: 350px;
+  overflow: hidden; margin-bottom: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.875rem; font-weight: 600;
+  color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.car-detail-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block; border-radius: inherit;
+}
 .car-badge { display: inline-flex; align-items: center; gap: .25rem;
   padding: .25rem .7rem; border-radius: 999px; font-size: .75rem; font-weight: 600; }
 .badge-suv      { background: #dbeafe; color: #1d4ed8; }
@@ -197,14 +211,14 @@ tbody td { padding: .85rem 1rem; color: var(--text-primary); }
 
 /* ── Auth Pages ────────────────────────────────────────────────────── */
 .auth-page { min-height: 100vh; display: flex; align-items: center;
-  justify-content: center; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); }
+  justify-content: center; background: #0f172a; }
 .auth-card { background: var(--surface); border-radius: var(--radius-lg);
   padding: 2.5rem; width: 100%; max-width: 460px; box-shadow: var(--shadow-lg); }
 .auth-logo { font-size: 1.75rem; font-weight: 800; text-align: center; margin-bottom: 2rem; color: var(--text-primary); }
 .auth-logo span { color: var(--primary); }
 
 /* ── Hero Banner ───────────────────────────────────────────────────── */
-.hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #1e40af 100%);
+.hero { background: #0f172a;
   padding: 4rem 2rem; text-align: center; color: #fff; }
 .hero h1 { font-size: 3rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 1rem; }
 .hero h1 span { color: var(--accent); }

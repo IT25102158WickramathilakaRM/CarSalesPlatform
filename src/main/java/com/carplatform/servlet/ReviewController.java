@@ -28,7 +28,7 @@ public class ReviewController {
     public String showReviewForm(@PathVariable String carId, HttpSession session, Model model) {
         if (session.getAttribute("loggedUser") == null) return "redirect:/login";
         Car car = carService.getCarById(carId);
-        if (car == null) return "redirect:/cars";
+        if (!carService.isPublicBrowseListing(car)) return "redirect:/cars";
         model.addAttribute("car", car);
         model.addAttribute("loggedUser", session.getAttribute("loggedUser"));
         return "review-submit";
@@ -44,6 +44,11 @@ public class ReviewController {
                                HttpSession session, RedirectAttributes ra) {
         User user = (User) session.getAttribute("loggedUser");
         if (user == null) return "redirect:/login";
+        Car listed = carService.getCarById(carId);
+        if (!carService.isPublicBrowseListing(listed)) {
+            ra.addFlashAttribute("error", "Reviews can only be submitted for approved listings.");
+            return "redirect:/cars";
+        }
         String result;
         if (!purchaseId.isBlank()) {
             result = reviewService.submitVerifiedReview(carId, user.getUserId(), sellerId, rating, title, body, purchaseId);

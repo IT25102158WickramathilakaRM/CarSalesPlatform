@@ -17,8 +17,8 @@
 </nav>
 <div class="page-wrapper">
   <div class="page-header"><h1 class="page-title">Admin Management</h1></div>
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
-  <c:if test="${not empty error}"><div class="alert alert-error">⚠️ ${error}</div></c:if>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
+  <c:if test="${not empty error}"><div class="alert alert-error">${error}</div></c:if>
   <div style="display:grid;grid-template-columns:1fr 360px;gap:2rem;align-items:start">
     <div class="table-wrapper">
       <table>

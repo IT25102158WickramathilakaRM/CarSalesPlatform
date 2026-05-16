@@ -16,7 +16,7 @@
     <h2 style="text-align:center;font-size:1.3rem;margin-bottom:1.5rem;color:var(--text-secondary)">Create your account</h2>
 
     <c:if test="${not empty error}">
-      <div class="alert alert-error">⚠️ ${error}</div>
+      <div class="alert alert-error">${error}</div>
     </c:if>
 
     <form action="${pageContext.request.contextPath}/register" method="post" id="registerForm">
@@ -27,13 +27,13 @@
           <label style="cursor:pointer">
             <input type="radio" name="role" value="BUYER" id="roleBuyer" checked style="display:none" onchange="toggleRole()">
             <div class="role-card" id="cardBuyer" style="border:2px solid var(--primary);border-radius:10px;padding:1rem;text-align:center;background:var(--primary-light)">
-              🛒 <strong>Buy a Car</strong><br><small>Browse &amp; purchase</small>
+              <strong>Buy a car</strong><br><small>Browse and purchase</small>
             </div>
           </label>
           <label style="cursor:pointer">
             <input type="radio" name="role" value="SELLER" id="roleSeller" style="display:none" onchange="toggleRole()">
             <div class="role-card" id="cardSeller" style="border:2px solid var(--border);border-radius:10px;padding:1rem;text-align:center">
-              🏷️ <strong>Sell a Car</strong><br><small>List your vehicles</small>
+              <strong>Sell a car</strong><br><small>List your vehicles</small>
             </div>
           </label>
         </div>

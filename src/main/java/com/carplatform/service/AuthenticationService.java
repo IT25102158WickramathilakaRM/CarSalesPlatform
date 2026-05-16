@@ -1,6 +1,7 @@
 package com.carplatform.service;
 
 import com.carplatform.model.*;
+import com.carplatform.util.AdminFileHandler;
 import com.carplatform.util.UserFileHandler;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -20,9 +21,11 @@ import java.util.UUID;
 public class AuthenticationService {
 
     private final UserFileHandler userFileHandler;
+    private final AdminFileHandler adminFileHandler;
 
     public AuthenticationService(@Value("${app.data.directory:data}") String dataDir) {
         this.userFileHandler = new UserFileHandler(dataDir);
+        this.adminFileHandler = new AdminFileHandler(dataDir);
     }
 
     // ── REGISTER ─────────────────────────────────────────────────────────
@@ -63,10 +66,16 @@ public class AuthenticationService {
      */
     public User login(String username, String password) {
         User user = userFileHandler.findByUsername(username);
-        if (user == null) return null;
-        if (!user.isActive()) return null;
-        if (!user.getPassword().equals(password)) return null;
-        return user;
+        if (user != null) {
+            if (!user.isActive()) return null;
+            if (!user.getPassword().equals(password)) return null;
+            return user;
+        }
+        AdminUser admin = adminFileHandler.findByUsername(username);
+        if (admin == null) return null;
+        if (!admin.isActive()) return null;
+        if (!admin.getPassword().equals(password)) return null;
+        return admin;
     }
 
     // ── READ ──────────────────────────────────────────────────────────────

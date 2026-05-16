@@ -15,7 +15,7 @@
     <a href="${pageContext.request.contextPath}/cars" class="nav-link">Browse</a>
     <a href="${pageContext.request.contextPath}/cars/my-listings" class="nav-link active">My Listings</a>
     <a href="${pageContext.request.contextPath}/cars/add" class="nav-link nav-btn">+ Add Listing</a>
-    <a href="${pageContext.request.contextPath}/profile" class="nav-link">👤 ${loggedUser.username}</a>
+    <a href="${pageContext.request.contextPath}/profile" class="nav-link">${loggedUser.username}</a>
     <a href="${pageContext.request.contextPath}/logout" class="nav-link">Logout</a>
   </div>
 </nav>
@@ -24,13 +24,12 @@
     <div><h1 class="page-title">My Listings</h1><p class="page-subtitle">Manage your car listings</p></div>
     <a href="${pageContext.request.contextPath}/cars/add" class="btn btn-primary">+ New Listing</a>
   </div>
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
-  <c:if test="${not empty error}"><div class="alert alert-error">⚠️ ${error}</div></c:if>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
+  <c:if test="${not empty error}"><div class="alert alert-error">${error}</div></c:if>
 
   <c:choose>
     <c:when test="${empty cars}">
       <div class="card text-center" style="padding:3rem">
-        <div style="font-size:3rem;margin-bottom:1rem">📋</div>
         <h3>No listings yet</h3>
         <p class="text-secondary mt-1 mb-2">Start selling by adding your first car listing.</p>
         <a href="${pageContext.request.contextPath}/cars/add" class="btn btn-primary">Add First Listing</a>
@@ -46,7 +45,7 @@
                 <td><strong>${car.year} ${car.make} ${car.model}</strong><br><span class="car-badge badge-${car.bodyType.toLowerCase()}">${car.bodyType}</span></td>
                 <td style="font-weight:700;color:var(--primary)">LKR <fmt:formatNumber value="${car.price}" pattern="#,###"/></td>
                 <td><span class="car-badge badge-${car.status.toLowerCase()}">${car.status}</span></td>
-                <td>${car.approved ? '✅ Yes' : '⏳ Pending'}</td>
+                <td>${car.approved ? 'Yes' : 'Pending'}</td>
                 <td class="text-secondary text-sm">${car.listedDate}</td>
                 <td>
                   <div class="flex gap-1">

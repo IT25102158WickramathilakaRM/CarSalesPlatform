@@ -62,7 +62,8 @@ public class Hatchback extends Car {
 
     @Override
     public String toFileString() {
-        return super.toFileString() + "|" + hasFoldableRearSeats + "|" + roofType + "|" + engineCC;
+        return super.toFileString() + "|" + hasFoldableRearSeats + "|" + roofType + "|"
+                + engineCC + tailImageUrl();
     }
 
     // ─── Getters & Setters ────────────────────────────────────────────────

@@ -23,11 +23,10 @@
     <h1 class="page-title">Purchase History</h1>
     <p class="page-subtitle">Track all your vehicle purchases</p>
   </div>
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
   <c:choose>
     <c:when test="${empty purchases}">
       <div class="card text-center" style="padding:3rem">
-        <div style="font-size:3rem">🛒</div>
         <h3 class="mt-2">No purchases yet</h3>
         <p class="text-secondary mt-1 mb-2">Browse available cars and make your first purchase.</p>
         <a href="${pageContext.request.contextPath}/cars" class="btn btn-primary">Browse Cars</a>

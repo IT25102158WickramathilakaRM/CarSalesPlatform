@@ -21,11 +21,10 @@
     <h1 class="page-title">My Inquiries</h1>
     <p class="page-subtitle">Track your sent inquiries and seller responses</p>
   </div>
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
   <c:choose>
     <c:when test="${empty inquiries}">
       <div class="card text-center" style="padding:3rem">
-        <div style="font-size:3rem">💬</div>
         <h3 class="mt-2">No inquiries yet</h3>
         <p class="text-secondary mt-1">Browse cars and send an inquiry to a seller.</p>
       </div>

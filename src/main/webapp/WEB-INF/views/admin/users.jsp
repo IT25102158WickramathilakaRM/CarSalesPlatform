@@ -16,9 +16,9 @@
   </div>
 </nav>
 <div class="page-wrapper">
-  <div class="page-header"><h1 class="page-title">👥 User Management</h1><p class="page-subtitle">View and manage all registered users</p></div>
-  <c:if test="${not empty success}"><div class="alert alert-success">✅ ${success}</div></c:if>
-  <c:if test="${not empty error}"><div class="alert alert-error">⚠️ ${error}</div></c:if>
+  <div class="page-header"><h1 class="page-title">User Management</h1><p class="page-subtitle">View and manage all registered users</p></div>
+  <c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
+  <c:if test="${not empty error}"><div class="alert alert-error">${error}</div></c:if>
   <div class="table-wrapper">
     <table>
       <thead><tr><th>User ID</th><th>Username</th><th>Full Name</th><th>Email</th><th>Role</th><th>Active</th><th>Registered</th><th>Actions</th></tr></thead>
@@ -30,7 +30,7 @@
             <td>${user.fullName}</td>
             <td class="text-sm">${user.email}</td>
             <td><span class="car-badge" style="background:${user.role=='SELLER'?'#dcfce7':user.role=='ADMIN'?'#fee2e2':'#dbeafe'};color:${user.role=='SELLER'?'#15803d':user.role=='ADMIN'?'#dc2626':'#1d4ed8'}">${user.role}</span></td>
-            <td>${user.active ? '✅' : '❌'}</td>
+            <td>${user.active ? 'Yes' : 'No'}</td>
             <td class="text-sm text-muted">${user.registrationDate}</td>
             <td>
               <form action="${pageContext.request.contextPath}/admin/users/delete/${user.userId}" method="post"

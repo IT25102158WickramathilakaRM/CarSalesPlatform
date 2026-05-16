@@ -22,9 +22,12 @@ import java.util.stream.Collectors;
 public class CarService {
 
     private final CarFileHandler carFileHandler;
+    private final boolean requireAdminApproval;
 
-    public CarService(@Value("${app.data.directory:data}") String dataDir) {
+    public CarService(@Value("${app.data.directory:data}") String dataDir,
+                      @Value("${app.listings.require-admin-approval:false}") boolean requireAdminApproval) {
         this.carFileHandler = new CarFileHandler(dataDir);
+        this.requireAdminApproval = requireAdminApproval;
     }
 
     // ── CREATE ────────────────────────────────────────────────────────────
@@ -38,7 +41,7 @@ public class CarService {
         car.setCarId(id);
         car.setListedDate(LocalDate.now().toString());
         car.setStatus("Available");
-        car.setApproved(false);   // must be approved by admin
+        car.setApproved(!requireAdminApproval);
         return carFileHandler.saveCar(car) ? id : "SAVE_ERROR";
     }
 
@@ -54,6 +57,27 @@ public class CarService {
 
     public Car getCarById(String carId) {
         return carFileHandler.findById(carId);
+    }
+
+    /** Approved and not rejected — same visibility rules as public browse/search. */
+    public boolean isPublicBrowseListing(Car car) {
+        if (car == null) return false;
+        return car.isApproved() && !"Rejected".equals(car.getStatus());
+    }
+
+    /**
+     * Unapproved or rejected listings are only visible to the seller who owns them or an admin.
+     */
+    public boolean mayViewCarDetail(Car car, User loggedUser, String userRole) {
+        if (car == null) return false;
+        if (isPublicBrowseListing(car)) return true;
+        if ("ADMIN".equals(userRole)) return true;
+        return loggedUser != null && loggedUser.getUserId().equals(car.getSellerId());
+    }
+
+    /** Purchase, inquiry, wishlist, and public reviews only on approved available stock. */
+    public boolean mayBuyerTransact(Car car) {
+        return car != null && car.isApproved() && "Available".equals(car.getStatus());
     }
 
     public List<Car> getCarsBySeller(String sellerId) {

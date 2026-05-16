@@ -62,7 +62,8 @@ public class SUV extends Car {
 
     @Override
     public String toFileString() {
-        return super.toFileString() + "|" + numSeats + "|" + hasFourWheelDrive + "|" + groundClearance;
+        return super.toFileString() + "|" + numSeats + "|" + hasFourWheelDrive + "|"
+                + groundClearance + tailImageUrl();
     }
 
     // ─── Getters & Setters ────────────────────────────────────────────────

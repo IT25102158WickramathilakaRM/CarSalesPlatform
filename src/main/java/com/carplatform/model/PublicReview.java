@@ -27,7 +27,7 @@ public class PublicReview extends Review {
 
     @Override
     public String getFormattedDisplay() {
-        return "⭐".repeat(getRating()) + " – " + title + " (by " + displayName + ")";
+        return "*".repeat(getRating()) + " - " + getTitle() + " (by " + displayName + ")";
     }
 
     @Override

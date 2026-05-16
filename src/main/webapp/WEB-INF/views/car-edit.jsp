@@ -44,6 +44,10 @@
           </select>
         </div>
         <div class="form-group">
+          <label class="form-label">Photo URL <small class="text-muted">(optional)</small></label>
+          <input name="imageUrl" type="text" class="form-control" value="${car.imageUrl}" placeholder="https://...">
+        </div>
+        <div class="form-group">
           <label class="form-label">Description</label>
           <textarea name="description" class="form-control" rows="5" style="resize:vertical">${car.description}</textarea>
         </div>

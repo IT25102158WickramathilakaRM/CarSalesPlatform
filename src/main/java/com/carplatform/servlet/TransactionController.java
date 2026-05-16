@@ -31,7 +31,7 @@ public class TransactionController {
     public String showInquiry(@PathVariable String carId, HttpSession session, Model model) {
         if (session.getAttribute("loggedUser") == null) return "redirect:/login";
         Car car = carService.getCarById(carId);
-        if (car == null) return "redirect:/cars";
+        if (!carService.mayBuyerTransact(car)) return "redirect:/cars";
         model.addAttribute("car", car);
         model.addAttribute("loggedUser", session.getAttribute("loggedUser"));
         return "inquiry-form";
@@ -46,6 +46,11 @@ public class TransactionController {
                                 HttpSession session, RedirectAttributes ra) {
         User user = (User) session.getAttribute("loggedUser");
         if (user == null) return "redirect:/login";
+        Car car = carService.getCarById(carId);
+        if (!carService.mayBuyerTransact(car)) {
+            ra.addFlashAttribute("error", "That listing is not available for inquiry.");
+            return "redirect:/cars";
+        }
         String result = transactionService.submitInquiry(carId, user.getUserId(),
                 sellerId, message, contactEmail, contactPhone);
         if (result.startsWith("INQ-")) {
@@ -82,7 +87,7 @@ public class TransactionController {
     public String showPurchase(@PathVariable String carId, HttpSession session, Model model) {
         if (session.getAttribute("loggedUser") == null) return "redirect:/login";
         Car car = carService.getCarById(carId);
-        if (car == null || !"Available".equals(car.getStatus())) return "redirect:/cars";
+        if (!carService.mayBuyerTransact(car)) return "redirect:/cars";
         model.addAttribute("car", car);
         model.addAttribute("loggedUser", session.getAttribute("loggedUser"));
         return "purchase-form";
@@ -97,6 +102,11 @@ public class TransactionController {
                                  HttpSession session, RedirectAttributes ra) {
         User user = (User) session.getAttribute("loggedUser");
         if (user == null) return "redirect:/login";
+        Car car = carService.getCarById(carId);
+        if (!carService.mayBuyerTransact(car)) {
+            ra.addFlashAttribute("error", "That listing is not available for purchase.");
+            return "redirect:/cars";
+        }
         String result = transactionService.createPurchase(carId, user.getUserId(),
                 sellerId, agreedPrice, paymentMethod);
         if (result.startsWith("PUR-")) {
