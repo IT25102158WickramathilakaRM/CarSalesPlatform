@@ -1,4 +1,4 @@
-package com.carplatform.util;
+﻿package com.carplatform.util;
 
 import com.carplatform.model.Wishlist;
 import com.carplatform.model.RecentView;
@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Handles file I/O for Wishlist (wishlist.txt) and RecentView (recentviews.txt).
- * Member 6 – Wishlist & Search Enhancement Module
+ * IT25101535 – Pulasthi M.V.C | Component 6 – Wishlist & Search Enhancement Module
  */
 public class WishlistFileHandler {
 

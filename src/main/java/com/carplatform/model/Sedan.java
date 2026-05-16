@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * Represents a Sedan car listing – extends Car.
@@ -8,7 +8,7 @@ package com.carplatform.model;
  *  - Polymorphism  : Overrides calculateInsuranceEstimate() and getListingSummary()
  *  - Encapsulation : Sedan-specific fields hidden
  *
- * Member 2 – Car Listing Management Module
+ * IT25102158 – Wickramathilaka R.M | Component 2 – Car Listing Management Module
  */
 public class Sedan extends Car {
 

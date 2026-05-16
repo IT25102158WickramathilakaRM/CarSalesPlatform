@@ -1,4 +1,4 @@
-package com.carplatform.servlet;
+﻿package com.carplatform.servlet;
 
 import com.carplatform.model.*;
 import com.carplatform.service.*;
@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Controller for Wishlist and Recently Viewed cars.
- * Member 6 – Wishlist and Search Enhancement Module
+ * IT25101535 – Pulasthi M.V.C | Component 6 – Wishlist & Search Enhancement Module
  */
 @Controller
 @RequestMapping("/wishlist")

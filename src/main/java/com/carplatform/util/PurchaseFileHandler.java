@@ -1,4 +1,4 @@
-package com.carplatform.util;
+﻿package com.carplatform.util;
 
 import com.carplatform.model.Purchase;
 
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 /**
  * Handles file I/O for Purchase records (purchases.txt).
- * Member 3 – Purchase & Inquiry Management Module
+ * IT25102391 – Nanayakkara T.P.D.N.L | Component 3 – Purchase & Inquiry Management Module
  */
 public class PurchaseFileHandler {
 

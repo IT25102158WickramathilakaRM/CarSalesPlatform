@@ -1,4 +1,4 @@
-package com.carplatform.servlet;
+﻿package com.carplatform.servlet;
 
 import com.carplatform.model.User;
 import com.carplatform.service.AuthenticationService;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * Controller for User Authentication and Profile Management.
- * Member 1 – User Management Module
+ * IT25100694 – Gunawardhena P.G.M.B.P. | Component 1 – User Management Module
  */
 @Controller
 public class UserController {

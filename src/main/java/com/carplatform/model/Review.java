@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * Abstract base class for reviews.
@@ -8,7 +8,7 @@ package com.carplatform.model;
  *  - Encapsulation : Fields secured
  *  - Inheritance   : PublicReview, VerifiedReview extend this
  *
- * Member 5 – Review & Rating Management Module
+ * IT25103979 – Amadini G. G. A. | Component 5 – Review & Rating Management Module
  */
 public abstract class Review {
 

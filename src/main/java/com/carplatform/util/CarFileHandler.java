@@ -1,4 +1,4 @@
-package com.carplatform.util;
+﻿package com.carplatform.util;
 
 import com.carplatform.model.*;
 
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  * carId|sellerId|make|model|year|price|mileage|colour|fuelType|transmission|
  * condition|description|listedDate|status|isApproved|bodyType|[type-specific fields]|imageUrl
  *
- * Member 2 – Car Listing Management Module
+ * IT25102158 – Wickramathilaka R.M | Component 2 – Car Listing Management Module
  */
 public class CarFileHandler {
 

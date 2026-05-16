@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * Abstract base class representing a User in the system.
@@ -8,7 +8,7 @@ package com.carplatform.model;
  *  - Encapsulation : Private fields with public getters/setters
  *  - Information Hiding: Password stored securely, not exposed freely
  *
- * Member 1 – User Management Module
+ * IT25100694 – Gunawardhena P.G.M.B.P. | Component 1 – User Management Module
  */
 public abstract class User {
 

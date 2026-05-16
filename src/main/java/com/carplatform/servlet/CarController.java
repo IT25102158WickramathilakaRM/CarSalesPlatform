@@ -1,4 +1,4 @@
-package com.carplatform.servlet;
+﻿package com.carplatform.servlet;
 
 import com.carplatform.model.*;
 import com.carplatform.service.*;
@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Controller for Car Listing CRUD, search, and filter operations.
- * Member 2 – Car Listing Management Module
+ * IT25102158 – Wickramathilaka R.M | Component 2 – Car Listing Management Module
  */
 @Controller
 @RequestMapping("/cars")

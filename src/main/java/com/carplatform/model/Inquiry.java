@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * Represents a purchase inquiry submitted by a buyer.
@@ -7,7 +7,7 @@ package com.carplatform.model;
  *  - Encapsulation : All fields private with getters/setters
  *  - Abstraction   : Inquiry status managed through service layer
  *
- * Member 3 – Purchase & Inquiry Management Module
+ * IT25102391 – Nanayakkara T.P.D.N.L | Component 3 – Purchase & Inquiry Management Module
  */
 public class Inquiry {
 

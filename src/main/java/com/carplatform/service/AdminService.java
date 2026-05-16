@@ -1,4 +1,4 @@
-package com.carplatform.service;
+﻿package com.carplatform.service;
 
 import com.carplatform.model.*;
 import com.carplatform.util.AdminFileHandler;
@@ -15,7 +15,7 @@ import java.util.UUID;
  *
  * OOP: Inheritance    – AdminUser extends User hierarchy.
  *      Information Hiding – permission checks done internally.
- * Member 4 – Admin Management Module
+ * IT25103531 – Gimhan U.V.K.K | Component 4 – Admin Management Module
  */
 @Service
 public class AdminService {

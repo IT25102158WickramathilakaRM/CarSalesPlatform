@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * A verified review – posted only by confirmed buyers of that vehicle.
@@ -7,7 +7,7 @@ package com.carplatform.model;
  *  - Inheritance   : Extends Review
  *  - Polymorphism  : Overrides getReviewType() and getFormattedDisplay()
  *
- * Member 5 – Review & Rating Management Module
+ * IT25103979 – Amadini G. G. A. | Component 5 – Review & Rating Management Module
  */
 public class VerifiedReview extends Review {
 

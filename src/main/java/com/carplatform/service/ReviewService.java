@@ -1,4 +1,4 @@
-package com.carplatform.service;
+﻿package com.carplatform.service;
 
 import com.carplatform.model.*;
 import com.carplatform.util.ReviewFileHandler;
@@ -11,7 +11,7 @@ import java.util.UUID;
 
 /**
  * Service for Review and Rating management.
- * Member 5 – Review and Rating Management Module
+ * IT25103979 – Amadini G. G. A. | Component 5 – Review & Rating Management Module
  */
 @Service
 public class ReviewService {

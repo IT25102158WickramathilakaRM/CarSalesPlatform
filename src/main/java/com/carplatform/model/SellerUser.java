@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * Represents a Seller user – inherits from User.
@@ -8,7 +8,7 @@ package com.carplatform.model;
  *  - Encapsulation : Seller-specific data hidden behind accessors
  *  - Polymorphism  : Overrides getRole() and getDisplayInfo()
  *
- * Member 1 – User Management Module
+ * IT25100694 – Gunawardhena P.G.M.B.P. | Component 1 – User Management Module
  */
 public class SellerUser extends User {
 

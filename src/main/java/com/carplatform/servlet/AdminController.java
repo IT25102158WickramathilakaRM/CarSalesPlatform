@@ -1,4 +1,4 @@
-package com.carplatform.servlet;
+﻿package com.carplatform.servlet;
 
 import com.carplatform.model.*;
 import com.carplatform.service.*;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * Controller for Admin dashboard, moderation, and management.
- * Member 4 – Admin Management Module
+ * IT25103531 – Gimhan U.V.K.K | Component 4 – Admin Management Module
  */
 @Controller
 @RequestMapping("/admin")

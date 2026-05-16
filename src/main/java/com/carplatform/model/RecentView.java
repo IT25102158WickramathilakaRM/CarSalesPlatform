@@ -1,8 +1,8 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * Represents a recently viewed car entry for a user.
- * Member 6 – Wishlist & Search Enhancement Module
+ * IT25101535 – Pulasthi M.V.C | Component 6 – Wishlist & Search Enhancement Module
  */
 public class RecentView {
 

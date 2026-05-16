@@ -1,4 +1,4 @@
-package com.carplatform.util;
+﻿package com.carplatform.util;
 
 import com.carplatform.model.Review;
 import com.carplatform.model.PublicReview;
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 /**
  * Handles file I/O for Review records (reviews.txt).
- * Member 5 – Review & Rating Management Module
+ * IT25103979 – Amadini G. G. A. | Component 5 – Review & Rating Management Module
  */
 public class ReviewFileHandler {
 

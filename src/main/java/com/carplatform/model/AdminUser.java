@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * Represents an Admin user – extends User.
@@ -8,7 +8,7 @@ package com.carplatform.model;
  *  - Encapsulation     : Admin-specific fields secured
  *  - Information Hiding: Admin permissions not accessible from public API
  *
- * Member 4 – Admin Management Module
+ * IT25103531 – Gimhan U.V.K.K | Component 4 – Admin Management Module
  */
 public class AdminUser extends User {
 

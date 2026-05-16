@@ -1,4 +1,4 @@
-package com.carplatform.service;
+﻿package com.carplatform.service;
 
 import com.carplatform.model.*;
 import com.carplatform.util.AdminFileHandler;
@@ -15,7 +15,7 @@ import java.util.UUID;
  *
  * OOP: Encapsulation – all business logic hidden from servlets.
  *      Polymorphism – works with any User subtype.
- * Member 1 – User Management Module
+ * IT25100694 – Gunawardhena P.G.M.B.P. | Component 1 – User Management Module
  */
 @Service
 public class AuthenticationService {

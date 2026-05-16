@@ -1,4 +1,4 @@
-package com.carplatform.servlet;
+﻿package com.carplatform.servlet;
 
 import com.carplatform.model.*;
 import com.carplatform.service.*;
@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * Controller for Inquiry and Purchase transactions.
- * Member 3 – Purchase and Inquiry Management Module
+ * IT25102391 – Nanayakkara T.P.D.N.L | Component 3 – Purchase & Inquiry Management Module
  */
 @Controller
 public class TransactionController {

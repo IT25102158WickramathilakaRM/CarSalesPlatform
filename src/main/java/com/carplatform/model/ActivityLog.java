@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * Represents an activity log entry for admin monitoring.
@@ -6,7 +6,7 @@ package com.carplatform.model;
  * OOP Concepts:
  *  - Encapsulation : All fields hidden behind accessors
  *
- * Member 4 – Admin Management Module
+ * IT25103531 – Gimhan U.V.K.K | Component 4 – Admin Management Module
  */
 public class ActivityLog {
 

@@ -1,4 +1,4 @@
-package com.carplatform.service;
+﻿package com.carplatform.service;
 
 import com.carplatform.model.*;
 import com.carplatform.util.CarFileHandler;
@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  *
  * OOP: Polymorphism – works with any Car subtype (SUV, Sedan, Hatchback).
  *      Abstraction  – internal file ops hidden behind service methods.
- * Member 2 – Car Listing Management Module
+ * IT25102158 – Wickramathilaka R.M | Component 2 – Car Listing Management Module
  */
 @Service
 public class CarService {
@@ -138,7 +138,7 @@ public class CarService {
         return carFileHandler.deleteCar(carId);
     }
 
-    // ── ADMIN APPROVAL (used by Member 4) ────────────────────────────────
+    // ── ADMIN APPROVAL (used by Component 4 – IT25103531 Gimhan) ───────────
 
     public boolean approveListing(String carId) {
         Car car = carFileHandler.findById(carId);

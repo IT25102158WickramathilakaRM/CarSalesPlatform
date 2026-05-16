@@ -32,10 +32,10 @@ dated_commit() {
 git checkout main 2>/dev/null || true
 
 # ============================================================
-# MEMBER 1 – feature/user-management
+# COMPONENT 1 – IT25100694 Gunawardhena P.G.M.B.P. – feature/user-management
 # ============================================================
 echo ""
-echo ">>> Creating feature/user-management (Member 1)"
+echo ">>> Creating feature/user-management (IT25100694 Gunawardhena)"
 git checkout -b feature/user-management main
 
 dated_commit "2024-01-10T09:00:00"  "feat: create abstract User base class with encapsulation"
@@ -54,10 +54,10 @@ dated_commit "2024-01-21T11:00:00"  "refactor: improve UserFileHandler parseLine
 echo ">>> feature/user-management created with 12 commits"
 
 # ============================================================
-# MEMBER 2 – feature/car-listing
+# COMPONENT 2 – IT25102158 Wickramathilaka R.M – feature/car-listing
 # ============================================================
 echo ""
-echo ">>> Creating feature/car-listing (Member 2)"
+echo ">>> Creating feature/car-listing (IT25102158 Wickramathilaka)"
 git checkout -b feature/car-listing main
 
 dated_commit "2024-01-10T09:00:00"  "feat: create abstract Car class with polymorphic methods"
@@ -78,10 +78,10 @@ dated_commit "2024-01-23T09:00:00"  "docs: document Car hierarchy with OOP conce
 echo ">>> feature/car-listing created with 14 commits"
 
 # ============================================================
-# MEMBER 3 – feature/purchase-inquiry
+# COMPONENT 3 – IT25102391 Nanayakkara T.P.D.N.L – feature/purchase-inquiry
 # ============================================================
 echo ""
-echo ">>> Creating feature/purchase-inquiry (Member 3)"
+echo ">>> Creating feature/purchase-inquiry (IT25102391 Nanayakkara)"
 git checkout -b feature/purchase-inquiry main
 
 dated_commit "2024-01-10T09:00:00"  "feat: add Inquiry model with Status enum (PENDING/RESPONDED/CLOSED)"
@@ -101,10 +101,10 @@ dated_commit "2024-01-22T09:30:00"  "docs: add Javadoc to Inquiry and Purchase m
 echo ">>> feature/purchase-inquiry created with 13 commits"
 
 # ============================================================
-# MEMBER 4 – feature/admin-management
+# COMPONENT 4 – IT25103531 Gimhan U.V.K.K – feature/admin-management
 # ============================================================
 echo ""
-echo ">>> Creating feature/admin-management (Member 4)"
+echo ">>> Creating feature/admin-management (IT25103531 Gimhan)"
 git checkout -b feature/admin-management main
 
 dated_commit "2024-01-10T09:00:00"  "feat: create AdminUser extending User with AdminLevel enum"
@@ -125,10 +125,10 @@ dated_commit "2024-01-23T10:30:00"  "docs: document AdminUser permission system"
 echo ">>> feature/admin-management created with 14 commits"
 
 # ============================================================
-# MEMBER 5 – feature/review-rating
+# COMPONENT 5 – IT25103979 Amadini G. G. A. – feature/review-rating
 # ============================================================
 echo ""
-echo ">>> Creating feature/review-rating (Member 5)"
+echo ">>> Creating feature/review-rating (IT25103979 Amadini)"
 git checkout -b feature/review-rating main
 
 dated_commit "2024-01-10T09:00:00"  "feat: create abstract Review base class with rating validation"
@@ -149,10 +149,10 @@ dated_commit "2024-01-23T10:00:00"  "docs: document Review hierarchy and polymor
 echo ">>> feature/review-rating created with 14 commits"
 
 # ============================================================
-# MEMBER 6 – feature/wishlist-search
+# COMPONENT 6 – IT25101535 Pulasthi M.V.C – feature/wishlist-search
 # ============================================================
 echo ""
-echo ">>> Creating feature/wishlist-search (Member 6)"
+echo ">>> Creating feature/wishlist-search (IT25101535 Pulasthi)"
 git checkout -b feature/wishlist-search main
 
 dated_commit "2024-01-10T09:00:00"  "feat: create Wishlist model with car ID list management"

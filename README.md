@@ -16,14 +16,25 @@
 
 ## Group Members & Modules
 
-| Member | Module | Key Classes |
-|--------|--------|------------|
-| Member 1 | User Management | `User`, `BuyerUser`, `SellerUser`, `AuthenticationService`, `UserFileHandler` |
-| Member 2 | Car Listing Management | `Car`, `SUV`, `Sedan`, `Hatchback`, `CarService`, `CarFileHandler` |
-| Member 3 | Purchase & Inquiry | `Inquiry`, `Purchase`, `TransactionService`, `InquiryFileHandler`, `PurchaseFileHandler` |
-| Member 4 | Admin Management | `AdminUser`, `ActivityLog`, `AdminService`, `AdminFileHandler` |
-| Member 5 | Review & Rating | `Review`, `PublicReview`, `VerifiedReview`, `ReviewService`, `ReviewFileHandler` |
-| Member 6 | Wishlist & Search | `Wishlist`, `RecentView`, `WishlistService`, `WishlistFileHandler` |
+| Name | Student ID | Component | Module | Branch |
+|------|------------|-----------|--------|--------|
+| Gunawardhena P.G.M.B.P. | IT25100694 | 1 | User Management | `feature/user-management` |
+| Wickramathilaka R.M | IT25102158 | 2 | Car Listing Management | `feature/car-listing` |
+| Nanayakkara T.P.D.N.L | IT25102391 | 3 | Purchase & Inquiry | `feature/purchase-inquiry` |
+| Gimhan U.V.K.K | IT25103531 | 4 | Admin Management | `feature/admin-management` |
+| Amadini G. G. A. | IT25103979 | 5 | Review & Rating | `feature/review-rating` |
+| Pulasthi M.V.C | IT25101535 | 6 | Wishlist & Search | `feature/wishlist-search` |
+
+**Repository:** https://github.com/IT25102158WickramathilakaRM/CarSalesPlatform
+
+| Component | Key Classes |
+|-----------|-------------|
+| 1 – User Management | `User`, `BuyerUser`, `SellerUser`, `AuthenticationService`, `UserFileHandler` |
+| 2 – Car Listing | `Car`, `SUV`, `Sedan`, `Hatchback`, `CarService`, `CarFileHandler` |
+| 3 – Purchase & Inquiry | `Inquiry`, `Purchase`, `TransactionService`, `InquiryFileHandler`, `PurchaseFileHandler` |
+| 4 – Admin Management | `AdminUser`, `ActivityLog`, `AdminService`, `AdminFileHandler` |
+| 5 – Review & Rating | `Review`, `PublicReview`, `VerifiedReview`, `ReviewService`, `ReviewFileHandler` |
+| 6 – Wishlist & Search | `Wishlist`, `RecentView`, `WishlistService`, `WishlistFileHandler` |
 
 ---
 
@@ -74,44 +85,44 @@ CarSalesPlatform/
 ├── src/main/java/com/carplatform/
 │   ├── CarSalesPlatformApplication.java
 │   ├── model/
-│   │   ├── User.java              (Abstract – Member 1)
-│   │   ├── BuyerUser.java         (Member 1)
-│   │   ├── SellerUser.java        (Member 1)
-│   │   ├── Car.java               (Abstract – Member 2)
-│   │   ├── SUV.java               (Member 2)
-│   │   ├── Sedan.java             (Member 2)
-│   │   ├── Hatchback.java         (Member 2)
-│   │   ├── Inquiry.java           (Member 3)
-│   │   ├── Purchase.java          (Member 3)
-│   │   ├── AdminUser.java         (Member 4)
-│   │   ├── ActivityLog.java       (Member 4)
-│   │   ├── Review.java            (Abstract – Member 5)
-│   │   ├── PublicReview.java      (Member 5)
-│   │   ├── VerifiedReview.java    (Member 5)
-│   │   ├── Wishlist.java          (Member 6)
-│   │   └── RecentView.java        (Member 6)
+│   │   ├── User.java              (C1 – IT25100694)
+│   │   ├── BuyerUser.java         (C1 – IT25100694)
+│   │   ├── SellerUser.java        (C1 – IT25100694)
+│   │   ├── Car.java               (C2 – IT25102158)
+│   │   ├── SUV.java               (C2 – IT25102158)
+│   │   ├── Sedan.java             (C2 – IT25102158)
+│   │   ├── Hatchback.java         (C2 – IT25102158)
+│   │   ├── Inquiry.java           (C3 – IT25102391)
+│   │   ├── Purchase.java          (C3 – IT25102391)
+│   │   ├── AdminUser.java         (C4 – IT25103531)
+│   │   ├── ActivityLog.java       (C4 – IT25103531)
+│   │   ├── Review.java            (C5 – IT25103979)
+│   │   ├── PublicReview.java      (C5 – IT25103979)
+│   │   ├── VerifiedReview.java    (C5 – IT25103979)
+│   │   ├── Wishlist.java          (C6 – IT25101535)
+│   │   └── RecentView.java        (C6 – IT25101535)
 │   ├── service/
-│   │   ├── AuthenticationService.java  (Member 1)
-│   │   ├── CarService.java             (Member 2)
-│   │   ├── TransactionService.java     (Member 3)
-│   │   ├── AdminService.java           (Member 4)
-│   │   ├── ReviewService.java          (Member 5)
-│   │   └── WishlistService.java        (Member 6)
+│   │   ├── AuthenticationService.java  (C1 – IT25100694)
+│   │   ├── CarService.java             (C2 – IT25102158)
+│   │   ├── TransactionService.java     (C3 – IT25102391)
+│   │   ├── AdminService.java           (C4 – IT25103531)
+│   │   ├── ReviewService.java          (C5 – IT25103979)
+│   │   └── WishlistService.java        (C6 – IT25101535)
 │   ├── servlet/ (Spring MVC Controllers)
-│   │   ├── UserController.java         (Member 1)
-│   │   ├── CarController.java          (Member 2)
-│   │   ├── TransactionController.java  (Member 3)
-│   │   ├── AdminController.java        (Member 4)
-│   │   ├── ReviewController.java       (Member 5)
-│   │   └── WishlistController.java     (Member 6)
+│   │   ├── UserController.java         (C1 – IT25100694)
+│   │   ├── CarController.java          (C2 – IT25102158)
+│   │   ├── TransactionController.java  (C3 – IT25102391)
+│   │   ├── AdminController.java        (C4 – IT25103531)
+│   │   ├── ReviewController.java       (C5 – IT25103979)
+│   │   └── WishlistController.java     (C6 – IT25101535)
 │   └── util/ (File Handlers)
-│       ├── UserFileHandler.java        (Member 1)
-│       ├── CarFileHandler.java         (Member 2)
-│       ├── InquiryFileHandler.java     (Member 3)
-│       ├── PurchaseFileHandler.java    (Member 3)
-│       ├── AdminFileHandler.java       (Member 4)
-│       ├── ReviewFileHandler.java      (Member 5)
-│       └── WishlistFileHandler.java    (Member 6)
+│       ├── UserFileHandler.java        (C1 – IT25100694)
+│       ├── CarFileHandler.java         (C2 – IT25102158)
+│       ├── InquiryFileHandler.java     (C3 – IT25102391)
+│       ├── PurchaseFileHandler.java    (C3 – IT25102391)
+│       ├── AdminFileHandler.java       (C4 – IT25103531)
+│       ├── ReviewFileHandler.java      (C5 – IT25103979)
+│       └── WishlistFileHandler.java    (C6 – IT25101535)
 ├── src/main/webapp/
 │   ├── WEB-INF/views/
 │   │   ├── login.jsp, register.jsp, profile.jsp
@@ -165,13 +176,16 @@ CarSalesPlatform/
 
 ## GitHub Contribution Strategy
 
-Each member works on their own branch:
-- `feature/user-management` – Member 1
-- `feature/car-listing` – Member 2
-- `feature/purchase-inquiry` – Member 3
-- `feature/admin-management` – Member 4
-- `feature/review-rating` – Member 5
-- `feature/wishlist-search` – Member 6
+Each member works on their own branch (see [docs/WORKLOAD_DISTRIBUTION.md](docs/WORKLOAD_DISTRIBUTION.md)):
+
+| Branch | Student | ID |
+|--------|---------|-----|
+| `feature/user-management` | Gunawardhena P.G.M.B.P. | IT25100694 |
+| `feature/car-listing` | Wickramathilaka R.M | IT25102158 |
+| `feature/purchase-inquiry` | Nanayakkara T.P.D.N.L | IT25102391 |
+| `feature/admin-management` | Gimhan U.V.K.K | IT25103531 |
+| `feature/review-rating` | Amadini G. G. A. | IT25103979 |
+| `feature/wishlist-search` | Pulasthi M.V.C | IT25101535 |
 
 ---
 

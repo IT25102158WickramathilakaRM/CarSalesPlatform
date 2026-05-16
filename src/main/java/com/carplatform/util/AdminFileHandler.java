@@ -1,4 +1,4 @@
-package com.carplatform.util;
+﻿package com.carplatform.util;
 
 import com.carplatform.model.AdminUser;
 import com.carplatform.model.ActivityLog;
@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Handles file I/O for Admin records (admins.txt) and Activity Logs (logs.txt).
- * Member 4 – Admin Management Module
+ * IT25103531 – Gimhan U.V.K.K | Component 4 – Admin Management Module
  */
 public class AdminFileHandler {
 

@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * Abstract base class representing a Car listing.
@@ -8,7 +8,7 @@ package com.carplatform.model;
  *  - Encapsulation : All fields private with getters/setters
  *  - Inheritance   : Subclasses (SUV, Sedan, Hatchback) extend this
  *
- * Member 2 – Car Listing Management Module
+ * IT25102158 – Wickramathilaka R.M | Component 2 – Car Listing Management Module
  */
 public abstract class Car {
 

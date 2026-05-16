@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 /**
  * Represents a completed vehicle purchase transaction.
@@ -7,7 +7,7 @@ package com.carplatform.model;
  *  - Encapsulation : All transaction data hidden behind accessors
  *  - Abstraction   : Status transitions managed via service
  *
- * Member 3 – Purchase & Inquiry Management Module
+ * IT25102391 – Nanayakkara T.P.D.N.L | Component 3 – Purchase & Inquiry Management Module
  */
 public class Purchase {
 

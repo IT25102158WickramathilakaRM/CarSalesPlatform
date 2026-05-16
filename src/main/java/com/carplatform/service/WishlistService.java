@@ -1,4 +1,4 @@
-package com.carplatform.service;
+﻿package com.carplatform.service;
 
 import com.carplatform.model.*;
 import com.carplatform.util.WishlistFileHandler;
@@ -11,7 +11,7 @@ import java.util.UUID;
 
 /**
  * Service for Wishlist management and recently viewed cars.
- * Member 6 – Wishlist and Search Enhancement Module
+ * IT25101535 – Pulasthi M.V.C | Component 6 – Wishlist & Search Enhancement Module
  */
 @Service
 public class WishlistService {

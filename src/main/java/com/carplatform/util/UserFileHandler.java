@@ -1,4 +1,4 @@
-package com.carplatform.util;
+﻿package com.carplatform.util;
 
 import com.carplatform.model.User;
 import com.carplatform.model.BuyerUser;
@@ -16,7 +16,7 @@ import java.util.List;
  * userId|username|email|password|fullName|phoneNumber|registrationDate|isActive|role|[role-specific fields...]
  *
  * OOP: Encapsulation – internal file logic hidden; only public methods exposed.
- * Member 1 – User Management Module
+ * IT25100694 – Gunawardhena P.G.M.B.P. | Component 1 – User Management Module
  */
 public class UserFileHandler {
 

@@ -1,4 +1,4 @@
-package com.carplatform.model;
+﻿package com.carplatform.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  *  - Encapsulation : wishlist data hidden behind accessors
  *  - Abstraction   : wishlist operations managed via WishlistService
  *
- * Member 6 – Wishlist & Search Enhancement Module
+ * IT25101535 – Pulasthi M.V.C | Component 6 – Wishlist & Search Enhancement Module
  */
 public class Wishlist {
 

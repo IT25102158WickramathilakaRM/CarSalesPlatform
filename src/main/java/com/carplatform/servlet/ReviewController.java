@@ -1,4 +1,4 @@
-package com.carplatform.servlet;
+﻿package com.carplatform.servlet;
 
 import com.carplatform.model.*;
 import com.carplatform.service.*;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
  * Controller for Review and Rating operations.
- * Member 5 – Review and Rating Management Module
+ * IT25103979 – Amadini G. G. A. | Component 5 – Review & Rating Management Module
  */
 @Controller
 @RequestMapping("/reviews")
