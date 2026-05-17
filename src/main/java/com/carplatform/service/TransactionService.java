@@ -1,4 +1,4 @@
-﻿package com.carplatform.service;
+package com.carplatform.service;
 
 import com.carplatform.model.*;
 import com.carplatform.util.InquiryFileHandler;
@@ -15,7 +15,7 @@ import java.util.UUID;
  *
  * OOP: Encapsulation – all logic hidden from controllers.
  *      Abstraction   – hides file handler complexity.
- * IT25102391 – Nanayakkara T.P.D.N.L | Component 3 – Purchase & Inquiry Management Module
+ * Member 3 – Purchase & Inquiry Management Module
  */
 @Service
 public class TransactionService {
