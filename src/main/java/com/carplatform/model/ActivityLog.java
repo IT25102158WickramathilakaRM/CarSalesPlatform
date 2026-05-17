@@ -1,13 +1,5 @@
 ﻿package com.carplatform.model;
 
-/**
- * Represents an activity log entry for admin monitoring.
- *
- * OOP Concepts:
- *  - Encapsulation : All fields hidden behind accessors
- *
- * IT25103531 – Gimhan U.V.K.K | Component 4 – Admin Management Module
- */
 public class ActivityLog {
 
     public enum ActionType {
@@ -21,7 +13,7 @@ public class ActivityLog {
     private String     logId;
     private String     adminId;
     private ActionType actionType;
-    private String     targetId;       // ID of affected entity (user/car/etc.)
+    private String     targetId;       // ID  (user/car/etc.)
     private String     description;
     private String     timestamp;
     private String     ipAddress;
