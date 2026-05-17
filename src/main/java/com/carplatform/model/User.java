@@ -1,7 +1,7 @@
 ﻿package com.carplatform.model;
 
 /**
- * IT25100694 – Gunawardhena P.G.M.B.P. | Member 1 – User Management Module
+ * IT25100694 – Gunawardhena P.G.M.B.P | Member 1 – User Management Module
  
  * Abstract base class representing a User in the system.
  *
