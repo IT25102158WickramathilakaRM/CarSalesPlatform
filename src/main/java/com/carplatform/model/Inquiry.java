@@ -94,5 +94,5 @@ public class Inquiry {
     public String getResponseDate()                       { return responseDate; }
     public void   setResponseDate(String d)               { this.responseDate = d; }
 
-    // t35
+    // t143
 }

@@ -8,4 +8,4 @@ INQ-007G8H9I|CAR-009I0J1K|USR-B2C3D4E5|USR-J0K1L2M3|Can I arrange a pre-purchase
 INQ-008H9I0J|CAR-010J1K2L|USR-D4E5F6G7|USR-J0K1L2M3|What is the import duty paid value for this Outlander? I need it for insurance.|priya@email.com|0774567890|2024-02-25|PENDING|N/A|N/A
 INQ-009I0J1K|CAR-006F7G8H|USR-C3D4E5F6|USR-H8I9J0K1|Does the Alto have power steering? My elderly mother needs easy parking.|mike@email.com|0773456789|2024-03-01|RESPONDED|Yes, full power steering. Very easy to manoeuvre in city traffic.|2024-03-02
 INQ-010J1K2L|CAR-008H9I0J|USR-E5F6G7H8|USR-I9J0K1L2|Is this Axio registered in the Western Province? I want to keep the same plate.|kasun@email.com|0775678901|2024-03-05|CLOSED|N/A|N/A
-# t37
+# t113
