@@ -76,8 +76,8 @@ public class AdminController {
     public String moderateCars(HttpSession session, Model model) {
         if (!isAdmin(session)) return "redirect:/login";
         model.addAttribute("pendingCars", carService.getPendingApproval());
-        model.addAttribute("allCars",     carService.getAllListings());
-        model.addAttribute("loggedUser",  session.getAttribute("loggedUser"));
+        model.addAttribute("allCars", carService.getAllListings());
+        model.addAttribute("loggedUser", session.getAttribute("loggedUser"));
         return "admin/cars";
     }
 
