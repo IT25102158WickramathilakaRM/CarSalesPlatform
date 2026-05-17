@@ -32,7 +32,8 @@ public class Inquiry {
     }
 
     public Inquiry(String inquiryId, String carId, String buyerId, String sellerId,
-                   String message, String contactEmail, String contactPhone, String submittedDate) {
+                   String message, String contactEmail, String contactPhone, String submittedDate) 
+    {
         this.inquiryId     = inquiryId;
         this.carId         = carId;
         this.buyerId       = buyerId;
