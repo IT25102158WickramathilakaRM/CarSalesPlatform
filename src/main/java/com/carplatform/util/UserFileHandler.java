@@ -10,13 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+* IT25100694 – Gunawardhena P.G.M.B.P | Member 1 – User Management Module
+
  * Handles all file read/write operations for User data.
  *
  * File format (users.txt):
  * userId|username|email|password|fullName|phoneNumber|registrationDate|isActive|role|[role-specific fields...]
  *
  * OOP: Encapsulation – internal file logic hidden; only public methods exposed.
- * IT25100694 – Gunawardhena P.G.M.B.P. | Component 1 – User Management Module
  */
 public class UserFileHandler {
 
