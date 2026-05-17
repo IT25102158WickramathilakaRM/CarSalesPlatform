@@ -1,14 +1,14 @@
 ﻿package com.carplatform.model;
 
 /**
+* IT25100694 – Gunawardhena P.G.M.B.P | Member 1 – User Management Module
+
  * Represents a Seller user – inherits from User.
  *
  * OOP Concepts:
  *  - Inheritance   : Extends abstract User class
  *  - Encapsulation : Seller-specific data hidden behind accessors
  *  - Polymorphism  : Overrides getRole() and getDisplayInfo()
- *
- * IT25100694 – Gunawardhena P.G.M.B.P. | Component 1 – User Management Module
  */
 public class SellerUser extends User {
 
