@@ -10,13 +10,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Service managing vehicle inquiries and purchase transactions.
- *
- * OOP: Encapsulation – all logic hidden from controllers.
- *      Abstraction   – hides file handler complexity.
- * Member 3 – Purchase & Inquiry Management Module
- */
 @Service
 public class TransactionService {
 
@@ -27,8 +20,6 @@ public class TransactionService {
         this.inquiryHandler  = new InquiryFileHandler(dataDir);
         this.purchaseHandler = new PurchaseFileHandler(dataDir);
     }
-
-    // ── INQUIRY CRUD ──────────────────────────────────────────────────────
 
     public String submitInquiry(String carId, String buyerId, String sellerId,
                                 String message, String email, String phone) {
@@ -72,8 +63,6 @@ public class TransactionService {
     public boolean deleteInquiry(String inquiryId) {
         return inquiryHandler.deleteInquiry(inquiryId);
     }
-
-    // ── PURCHASE CRUD ─────────────────────────────────────────────────────
 
     public String createPurchase(String carId, String buyerId, String sellerId,
                                  double agreedPrice, String paymentMethodStr) {
