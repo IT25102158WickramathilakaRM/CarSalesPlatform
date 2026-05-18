@@ -10,10 +10,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
-/**
- * Controller for Inquiry and Purchase transactions.
- * Member 3 – Purchase and Inquiry Management Module
- */
 @Controller
 public class TransactionController {
 
@@ -24,8 +20,6 @@ public class TransactionController {
         this.transactionService = ts;
         this.carService         = cs;
     }
-
-    // ── INQUIRY SUBMISSION ────────────────────────────────────────────────
 
     @GetMapping("/inquiry/{carId}")
     public String showInquiry(@PathVariable String carId, HttpSession session, Model model) {
@@ -61,8 +55,6 @@ public class TransactionController {
         return "redirect:/cars/" + carId;
     }
 
-    // ── MY INQUIRIES ──────────────────────────────────────────────────────
-
     @GetMapping("/inquiry/my")
     public String myInquiries(HttpSession session, Model model) {
         User user = (User) session.getAttribute("loggedUser");
@@ -80,8 +72,6 @@ public class TransactionController {
         ra.addFlashAttribute("success", "Inquiry deleted.");
         return "redirect:/inquiry/my";
     }
-
-    // ── PURCHASE ──────────────────────────────────────────────────────────
 
     @GetMapping("/purchase/{carId}")
     public String showPurchase(@PathVariable String carId, HttpSession session, Model model) {
@@ -116,8 +106,6 @@ public class TransactionController {
         ra.addFlashAttribute("error", "Purchase failed: " + result);
         return "redirect:/purchase/" + carId;
     }
-
-    // ── PURCHASE HISTORY ──────────────────────────────────────────────────
 
     @GetMapping("/purchase/history")
     public String purchaseHistory(HttpSession session, Model model) {
