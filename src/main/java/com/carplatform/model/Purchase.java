@@ -1,14 +1,5 @@
 package com.carplatform.model;
 
-/**
- * Represents a completed vehicle purchase transaction.
- *
- * OOP Concepts:
- *  - Encapsulation : All transaction data hidden behind accessors
- *  - Abstraction   : Status transitions managed via service
- *
- * Member 3 – Purchase & Inquiry Management Module
- */
 public class Purchase {
 
     public enum PaymentMethod { CASH, BANK_TRANSFER, INSTALLMENT }
@@ -24,8 +15,6 @@ public class Purchase {
     private String         purchaseDate;
     private String         completionDate;
     private String         notes;
-
-    // ─── Constructors ──────────────────────────────────────────────────────
 
     public Purchase() {
         this.purchaseStatus = PurchaseStatus.PENDING;
@@ -43,8 +32,6 @@ public class Purchase {
         this.purchaseDate   = purchaseDate;
         this.purchaseStatus = PurchaseStatus.PENDING;
     }
-
-    // ─── File Serialisation ───────────────────────────────────────────────
 
     public String toFileString() {
         return purchaseId + "|" + carId + "|" + buyerId + "|" + sellerId + "|"
@@ -66,8 +53,6 @@ public class Purchase {
         pur.setNotes         ("N/A".equals(p[9]) ? null : p[9]);
         return pur;
     }
-
-    // ─── Getters & Setters ────────────────────────────────────────────────
 
     public String getPurchaseId()                            { return purchaseId; }
     public void   setPurchaseId(String id)                   { this.purchaseId = id; }
