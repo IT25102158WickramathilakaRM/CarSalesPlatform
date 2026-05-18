@@ -46,4 +46,3 @@ Purchase: purchaseId, carId, buyerId, agreedPrice, paymentMethod, purchaseStatus
 ActivityLog: logId, adminId, actionType, targetId, timestamp
 Wishlist: wishlistId, userId, carIds: List<String>
 RecentView: recentViewId, userId, carId, viewedDate, viewCount
-# t11
