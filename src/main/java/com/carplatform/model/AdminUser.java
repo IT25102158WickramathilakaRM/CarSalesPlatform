@@ -1,15 +1,5 @@
 ﻿package com.carplatform.model;
 
-/**
- * Represents an Admin user – extends User.
- *
- * OOP Concepts:
- *  - Inheritance       : Extends abstract User
- *  - Encapsulation     : Admin-specific fields secured
- *  - Information Hiding: Admin permissions not accessible from public API
- *
- * IT25103531 – Gimhan U.V.K.K | Component 4 – Admin Management Module
- */
 public class AdminUser extends User {
 
     public enum AdminLevel { SUPER_ADMIN, MODERATOR, SUPPORT }

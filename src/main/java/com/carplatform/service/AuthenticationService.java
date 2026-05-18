@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * IT25100694 – Gunawardhena P.G.M.B.P | Component 1 – User Management Module
- 
+* IT25100694 – Gunawardhena P.G.M.B.P | Member 1 – User Management Module
+
  * Service for user authentication and profile management.
  *
  * OOP: Encapsulation – all business logic hidden from servlets.
- *      Polymorphism – works with any User subtype
+ *      Polymorphism – works with any User subtype.
  */
 @Service
 public class AuthenticationService {

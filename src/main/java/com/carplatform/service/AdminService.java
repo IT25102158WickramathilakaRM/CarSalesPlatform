@@ -12,7 +12,6 @@ import java.util.UUID;
 
 /**
  * Service for Admin management, moderation, and system monitoring.
- *
  * OOP: Inheritance    – AdminUser extends User hierarchy.
  *      Information Hiding – permission checks done internally.
  * IT25103531 – Gimhan U.V.K.K | Component 4 – Admin Management Module
