@@ -1,14 +1,14 @@
 ﻿package com.carplatform.model;
 
 /**
+* IT25100694 – Gunawardhena P.G.M.B.P | Component 1 – User Management Module
+
  * Abstract base class representing a User in the system.
  *
  * OOP Concepts Demonstrated:
  *  - Abstraction   : Abstract class with abstract method getRole()
  *  - Encapsulation : Private fields with public getters/setters
  *  - Information Hiding: Password stored securely, not exposed freely
- *
- * IT25100694 – Gunawardhena P.G.M.B.P. | Component 1 – User Management Module
  */
 public abstract class User {
 
