@@ -5,4 +5,3 @@ echo Keep this window open while you use the site.
 echo.
 call mvnw.cmd spring-boot:run
 pause
-# t6
