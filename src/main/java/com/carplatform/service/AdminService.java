@@ -93,6 +93,4 @@ public class AdminService {
         if (admin == null || admin.getAdminLevel() != AdminUser.AdminLevel.SUPER_ADMIN) return false;
         return adminFileHandler.clearLogs();
     }
-
-    // t83
 }

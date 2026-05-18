@@ -139,6 +139,4 @@ public class TransactionController {
         ra.addFlashAttribute("success", "Purchase cancelled.");
         return "redirect:/purchase/history";
     }
-
-    // t42
 }

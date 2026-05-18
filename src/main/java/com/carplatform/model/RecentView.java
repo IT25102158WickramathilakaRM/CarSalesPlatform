@@ -50,6 +50,4 @@ public class RecentView {
     public void   setViewCount(int c)            { this.viewCount = c; }
     // increment view count
     public void   incrementViewCount()           { this.viewCount++; }
-
-    // t71
 }

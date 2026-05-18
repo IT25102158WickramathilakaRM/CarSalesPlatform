@@ -53,4 +53,3 @@ function setRating(val) {
 </script>
 </body>
 </html>
-<%-- t68 --%>

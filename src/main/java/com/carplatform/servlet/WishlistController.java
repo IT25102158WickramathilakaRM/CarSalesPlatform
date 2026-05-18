@@ -96,6 +96,4 @@ public class WishlistController {
         model.addAttribute("loggedUser",  user);
         return "recent-views";
     }
-
-    // t150
 }

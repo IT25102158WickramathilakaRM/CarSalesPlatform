@@ -88,6 +88,4 @@ public class AdminUser extends User {
 
     public String getLastLoginDate()                         { return lastLoginDate; }
     public void   setLastLoginDate(String d)                 { this.lastLoginDate = d; }
-
-    // t112
 }

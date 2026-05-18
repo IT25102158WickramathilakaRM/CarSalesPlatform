@@ -91,6 +91,4 @@ public abstract class User {
     public String toString() {
         return "User{id='" + userId + "', username='" + username + "', role='" + getRole() + "'}";
     }
-
-    // t147
 }

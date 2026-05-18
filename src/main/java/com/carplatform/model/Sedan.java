@@ -70,6 +70,4 @@ public class Sedan extends Car {
 
     public String getBootCapacity()                   { return bootCapacity; }
     public void   setBootCapacity(String b)           { this.bootCapacity = b; }
-
-    // t24
 }

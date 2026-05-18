@@ -55,6 +55,4 @@ public class BuyerUser extends User {
 
     public int  getTotalPurchases()                        { return totalPurchases; }
     public void setTotalPurchases(int n)                   { this.totalPurchases = n; }
-
-    // t13
 }

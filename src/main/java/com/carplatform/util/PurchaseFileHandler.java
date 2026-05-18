@@ -81,6 +81,4 @@ public class PurchaseFileHandler {
             for (Purchase p : list) { w.write(p.toFileString()); w.newLine(); } return true;
         } catch (IOException e) { return false; }
     }
-
-    // t165
 }

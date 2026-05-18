@@ -70,6 +70,4 @@ public class Hatchback extends Car {
 
     public int  getEngineCC()                             { return engineCC; }
     public void setEngineCC(int e)                        { this.engineCC = e; }
-
-    // t25
 }

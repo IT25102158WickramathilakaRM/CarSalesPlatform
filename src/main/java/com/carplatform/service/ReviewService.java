@@ -84,6 +84,4 @@ public class ReviewService {
 
     // delete review
     public boolean deleteReview(String reviewId) { return reviewFileHandler.deleteReview(reviewId); }
-
-    // t175
 }

@@ -159,6 +159,4 @@ public class AdminController {
         model.addAttribute("loggedUser", session.getAttribute("loggedUser"));
         return "admin/logs";
     }
-
-    // t154
 }

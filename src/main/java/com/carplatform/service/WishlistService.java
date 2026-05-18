@@ -57,6 +57,4 @@ public class WishlistService {
     public List<RecentView> getRecentViews(String userId) {
         return wishlistFileHandler.getRecentViewsForUser(userId);
     }
-
-    // t152
 }

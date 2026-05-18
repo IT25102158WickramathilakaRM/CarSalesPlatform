@@ -72,6 +72,4 @@ public class ActivityLog {
 
     public String     getIpAddress()                       { return ipAddress; }
     public void       setIpAddress(String ip)              { this.ipAddress = ip; }
-
-    // t48
 }

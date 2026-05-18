@@ -127,6 +127,4 @@ public class WishlistFileHandler {
             for (RecentView rv : list) { w.write(rv.toFileString()); w.newLine(); } return true;
         } catch (IOException e) { return false; }
     }
-
-    // t74
 }

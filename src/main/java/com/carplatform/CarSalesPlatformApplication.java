@@ -12,6 +12,4 @@ public class CarSalesPlatformApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(CarSalesPlatformApplication.class, args);
     }
-
-    // t7
 }

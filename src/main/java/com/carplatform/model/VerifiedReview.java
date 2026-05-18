@@ -38,6 +38,4 @@ public class VerifiedReview extends Review {
     public void    setPurchaseId(String id) { this.purchaseId = id; }
     public boolean isVerified()             { return isVerified; }
     public void    setVerified(boolean v)   { this.isVerified = v; }
-
-    // t61
 }

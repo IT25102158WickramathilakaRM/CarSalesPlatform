@@ -67,4 +67,3 @@ setRating(5);
 </script>
 </body>
 </html>
-<%-- t157 --%>

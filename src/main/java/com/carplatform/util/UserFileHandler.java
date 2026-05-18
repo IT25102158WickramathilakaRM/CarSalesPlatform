@@ -185,6 +185,4 @@ public class UserFileHandler {
     public boolean emailExists(String email) {
         return findByEmail(email) != null;
     }
-
-    // t118
 }

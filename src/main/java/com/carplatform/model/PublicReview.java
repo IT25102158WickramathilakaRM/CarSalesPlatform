@@ -34,6 +34,4 @@ public class PublicReview extends Review {
 
     public String getDisplayName()              { return displayName; }
     public void   setDisplayName(String n)      { this.displayName = n; }
-
-    // t60
 }

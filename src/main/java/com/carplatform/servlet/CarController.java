@@ -199,6 +199,4 @@ public class CarController {
         }
         return "redirect:/cars/my-listings";
     }
-
-    // t124
 }

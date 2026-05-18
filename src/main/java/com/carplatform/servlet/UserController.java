@@ -142,6 +142,4 @@ public class UserController {
             default                -> "Registration failed. Please try again.";
         };
     }
-
-    // t131
 }

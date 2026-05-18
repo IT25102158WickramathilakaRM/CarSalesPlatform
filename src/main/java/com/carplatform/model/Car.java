@@ -141,6 +141,4 @@ public abstract class Car {
         return "Car{" + carId + " | " + year + " " + make + " " + model
                 + " | LKR " + price + " | " + status + "}";
     }
-
-    // t22
 }

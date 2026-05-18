@@ -81,6 +81,4 @@ public class InquiryFileHandler {
             for (Inquiry i : list) { w.write(i.toFileString()); w.newLine(); } return true;
         } catch (IOException e) { return false; }
     }
-
-    // t167
 }

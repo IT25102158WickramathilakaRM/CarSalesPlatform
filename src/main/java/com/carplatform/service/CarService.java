@@ -164,6 +164,4 @@ public class CarService {
                 .filter(c -> !c.isApproved() && "Available".equals(c.getStatus()))
                 .collect(Collectors.toList());
     }
-
-    // t126
 }

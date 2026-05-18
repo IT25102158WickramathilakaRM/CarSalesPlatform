@@ -70,6 +70,4 @@ public class SUV extends Car {
 
     public double getGroundClearance()                    { return groundClearance; }
     public void   setGroundClearance(double g)            { this.groundClearance = g; }
-
-    // t23
 }

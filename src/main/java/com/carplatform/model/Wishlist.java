@@ -74,6 +74,4 @@ public class Wishlist {
     public void         setCreatedDate(String d)          { this.createdDate = d; }
     public String       getLastUpdated()                  { return lastUpdated; }
     public void         setLastUpdated(String d)          { this.lastUpdated = d; }
-
-    // t151
 }
