@@ -1,14 +1,5 @@
 package com.carplatform.model;
 
-/**
- * Represents a purchase inquiry submitted by a buyer.
- *
- * OOP Concepts:
- *  - Encapsulation : All fields private with getters/setters
- *  - Abstraction   : Inquiry status managed through service layer
- *
- * Member 3 – Purchase & Inquiry Management Module
- */
 public class Inquiry {
 
     public enum Status { PENDING, RESPONDED, CLOSED }
@@ -24,8 +15,6 @@ public class Inquiry {
     private String submittedDate;
     private String responseMessage;
     private String responseDate;
-
-    // ─── Constructors ──────────────────────────────────────────────────────
 
     public Inquiry() {
         this.status = Status.PENDING;
@@ -44,8 +33,6 @@ public class Inquiry {
         this.status        = Status.PENDING;
     }
 
-    // ─── File Serialisation ───────────────────────────────────────────────
-
     public String toFileString() {
         return inquiryId + "|" + carId + "|" + buyerId + "|" + sellerId + "|"
                 + message + "|" + contactEmail + "|" + contactPhone + "|"
@@ -63,8 +50,6 @@ public class Inquiry {
         inq.setResponseDate   ("N/A".equals(p[10]) ? null : p[10]);
         return inq;
     }
-
-    // ─── Getters & Setters ────────────────────────────────────────────────
 
     public String getInquiryId()                          { return inquiryId; }
     public void   setInquiryId(String id)                 { this.inquiryId = id; }
