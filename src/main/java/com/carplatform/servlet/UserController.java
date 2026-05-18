@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 /**
+* IT25100694 – Gunawardhena P.G.M.B.P | Component 1 – User Management Module
+
  * Controller for User Authentication and Profile Management.
- * IT25100694 – Gunawardhena P.G.M.B.P. | Component 1 – User Management Module
  */
 @Controller
 public class UserController {
