@@ -20,4 +20,3 @@ if defined JAVA_HOME (
 
 "%JAVA_EXE%" -classpath "%WRAPPER_JAR%" "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" %WRAPPER_LAUNCHER% %*
 exit /b %ERRORLEVEL%
-# t3
