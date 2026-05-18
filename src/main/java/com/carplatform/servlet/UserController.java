@@ -53,7 +53,7 @@ public class UserController {
         return "redirect:/register";
     }
 
-    // ── LOGIN ─────────────────────────────────────────────────────────────
+    // ── LOGIN ────────────────────────────────────────────────────────────
 
     @GetMapping("/login")
     public String showLogin() { return "login"; }
