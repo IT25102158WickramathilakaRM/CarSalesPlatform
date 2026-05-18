@@ -9,4 +9,3 @@ USR-I9J0K1L2|chamara_s|chamara@cars.lk|cham123|Chamara Senanayake|0779012345|202
 USR-J0K1L2M3|saman_sel|saman@lk.com|saman456|Saman Jayawardena|0770123456|2024-03-10|true|SELLER|Saman Car World|Matara|4|4.8
 USR-D927661E|diwyan11|diwyanvithana@gmail.com|123456|Yasiru Vithana|0772981770|2026-05-12|true|BUYER|Any|0.0|0
 USR-24DECF16|r.24mw|ranmethw@gmail.com|123456|Ranmeth Manudaya Wickramathilaka|0785791597|2026-05-13|true|SELLER|||0|0.0
-# t148
