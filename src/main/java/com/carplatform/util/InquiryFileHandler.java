@@ -7,10 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Handles file I/O for Inquiry records (inquiries.txt).
- * Member 3 – Purchase & Inquiry Management Module
- */
 public class InquiryFileHandler {
 
     private final String filePath;
