@@ -8,32 +8,60 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
+/** 
+* Controller class that handles all HTTP requests related to Reviews.
+* Acts as a bridge between frontend and backend service layer.
+*/
 @Controller
 @RequestMapping("/reviews")
+    
 // C5 - submit/list/moderate reviews
-public class ReviewController {
+    
+public class ReviewController
+    {
 
+     // Service layer dependency (business logic)
     private final ReviewService reviewService;
+
+    // Car service dependency (for validation of car listings)   
     private final CarService carService;
 
     // spring injects review and car services
+     /** 
+     * Constructor injection 
+     */   
     public ReviewController(ReviewService rs, CarService cs) {
         this.reviewService = rs;
         this.carService    = cs;
     }
 
+     /**
+     * Show review submission form 
+     */   
     @GetMapping("/submit/{carId}")
     // show review form
-    public String showReviewForm(@PathVariable String carId, HttpSession session, Model model) {
+    public String showReviewForm(@PathVariable String carId, HttpSession session, Model model) 
+        {
+        // Check if user is logged in
         if (session.getAttribute("loggedUser") == null) return "redirect:/login";
+
+         // Get car details   
         Car car = carService.getCarById(carId);
-        if (!carService.isPublicBrowseListing(car)) return "redirect:/cars";
+            
+        // Validate car listing
+        if (!carService.isPublicBrowseListing(car)) 
+            return "redirect:/cars";
+
+        // Pass data to UI
         model.addAttribute("car", car);
         model.addAttribute("loggedUser", session.getAttribute("loggedUser"));
+            
         return "review-submit";
     }
-
+        
+/**
+* Submit review (Public or Verified)
+*/
     @PostMapping("/submit")
     // submit review
     public String submitReview(@RequestParam String carId,
@@ -42,11 +70,18 @@ public class ReviewController {
                                @RequestParam String title,
                                @RequestParam String body,
                                @RequestParam(defaultValue = "") String purchaseId,
-                               HttpSession session, RedirectAttributes ra) {
+                               HttpSession session, RedirectAttributes ra)
+        {
+        // Get logged user    
         User user = (User) session.getAttribute("loggedUser");
-        if (user == null) return "redirect:/login";
+            
+        if (user == null) 
+            return "redirect:/login";
+
+        // Get logged user  
         Car listed = carService.getCarById(carId);
-        if (!carService.isPublicBrowseListing(listed)) {
+        if (!carService.isPublicBrowseListing(listed)) 
+        {
             ra.addFlashAttribute("error", "Reviews can only be submitted for approved listings.");
             return "redirect:/cars";
         }
