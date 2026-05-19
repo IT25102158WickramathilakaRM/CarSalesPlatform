@@ -11,7 +11,8 @@ import java.util.stream.Collectors;
 
 
 // C5 - reviews.txt
-public class ReviewFileHandler {
+public class ReviewFileHandler
+    {
 
     private final String filePath;
 
